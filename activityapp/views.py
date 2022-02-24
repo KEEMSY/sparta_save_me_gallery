@@ -27,7 +27,7 @@ def upload_activity_page(request):
 
 # POST인경우만 존재
 def save_made_img(request):
-    jsonObject = json.loads(request.body)
+    jsonObject = json.loads(request.body.decode('utf-8'))
     if jsonObject.get("intenstion") == "yes":
         create_Activity(
             jsonObject.get("name"), jsonObject.get("pwd"), jsonObject.get("image_URL")
