@@ -4,9 +4,9 @@ from django.core.paginator import Page, Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
 from commentapp.models import Comment
-from random import randrange
-# Create your views here.
 
+
+# Create your views here.
 
 def get_comment_page(request)-> Page:
     if request.method == 'GET':
@@ -16,8 +16,7 @@ def get_comment_page(request)-> Page:
         comments = paginator.get_page(page)#현재 페이지에 표시될 댓글들을 넘겨줌
         return render(request, 'commentapp/comment_test.html', {'comments':comments})
     else:
-        a = random.randrange(1,6)
-        profile_img = "static/img/f'{a}.jpg'"
+        profile_img = "/static/img/"+str(random.randrange(1,6))+".jpg"
         Comment.objects.create( #생성시 알아서 저장.
             username=request.POST['username'],
             password = request.POST['password'],
