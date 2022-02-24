@@ -1,33 +1,38 @@
+import json
+
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 
 # Create your views here.
 from activityapp.models import Activity
-from activityapp.services.activity_service import  get_activity_page_load ,create_Activity
+from activityapp.services.activity_service import (create_Activity,
+                                                   get_activity_page_load)
 
 
-
+# 페이지에는 최신의 6개의 activity가 보여짐
 def home(request):
-    if request.method == 'GET':
-        return render(request, 'templates/activityapp/test_index.html',get_activity_page_load(0))
+    if request.method == "GET":
+        activities = get_activity_page_load(1)
+        return render(
+            request, "templates/activityapp/test_index.html", {"activities": activities}
+        )
     else:
-        page = request.POST.get('page')
-        return JsonResponse({'activities': get_activity_page_load(page)})
+        return JsonResponse({"activities": get_activity_page_load(1)})
 
 
-def upload_activity_page(request, offset):
-    return render(request, 'templates/activityapp/upload.html')
-
+# 업로드 페이지
+def upload_activity_page(request):
+    return render(request, "templates/activityapp/upload.html")
 
 
 # POST인경우만 존재
 def save_made_img(request):
-    # 데이터가 어떻게 오느냐에따라 수정해야함
-    if "intenstion" == "yes":
-        create_Activity(request.POST.get("name", ''),
-                        request.POST.get("pwd", ''),
-                        request.POST.get("image_URL", ''))
+    jsonObject = json.loads(request.body)
+    if jsonObject.get("intenstion") == "yes":
+        create_Activity(
+            jsonObject.get("name"), jsonObject.get("pwd"), jsonObject.get("image_URL")
+        )
 
-        return JsonResponse({'msg': 'Your own masterpiece is successfully saved!'})
+        return JsonResponse({"msg": "Your own masterpiece is successfully saved!"})
     else:
-        return redirect('activityapp:upload')
+        return redirect("activityapp:upload")

@@ -4,10 +4,10 @@ from activityapp.models import Activity
 
 
 def get_activity_page_load(page: int) -> Activity:
-    # 6개씩 보여줌
+    # 6개씩 보여짐
     limit = 6
     offset = limit * (page - 1)
-    activity_list = Activity.objects.order_by("-id")[offset:offset + limit]
+    activity_list = Activity.objects.order_by("-id")[offset : offset + limit]
     return activity_list
 
 

@@ -17,8 +17,8 @@ class Activity(BaseModel):
 
 
 class Info(models.Model):
-
     class Meta:
         db_table = "info"
+
     model_name = models.CharField(max_length=128)
     model_img = models.TextField()
