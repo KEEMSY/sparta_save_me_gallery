@@ -10,6 +10,7 @@ class Comment(BaseModel):
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
     comment = models.CharField(max_length=255)
+    profile_img = models.CharField(max_length=255)
 
     def __str__(self):
         return self.username
