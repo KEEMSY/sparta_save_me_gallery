@@ -6,5 +6,5 @@ app_name = "activityapp"
 
 urlpatterns = [
     path("", views.upload_activity_page, name="upload"),
-    path("save/", views.save_made_img, name="save_img"),
+    path("image/", views.save_made_img, name="save_img"),
 ]
