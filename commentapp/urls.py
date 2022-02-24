@@ -7,7 +7,7 @@ from .services import comment_service
 app_name = "commentapp"
 
 urlpatterns = [
-    #테스트용 path!
-    path('', views.get_comment_page, name='comments'),
+    path('', views.comment_page, name='show_comments'),
+    # path('')
     # path('', comment_service.get_comment_page, name='comments'),
 ]
