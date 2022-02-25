@@ -55,6 +55,54 @@
     height : 700px;
     background-color: #AAA7A7;
     margin-top: 200px;
+    transition-property: transform;
+    transition-duration:0.5s;
+    transition-timing-function: ease-in;
+}
+
+.content:hover{
+    transform: scale(1.1);
+}
+
+.checker{
+    position: absolute;
+    width: 600px;
+    height: 40px;
+    background-color: aqua;
+    opacity: 0;
+}
+
+.delete_button{
+    position: absolute;
+    width: 40px;
+    height:40px;
+    background-color: #ab0808;
+    left: 560px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #390D0D;
+    cursor: pointer;
+    opacity: 0;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
 }
 
 .first_content{

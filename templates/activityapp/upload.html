@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/activities.css' %}">
+    <link rel="stylesheet" href="{% static 'css/model1.css' %}">
+    <script src="/static/js/model1.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -13,25 +14,45 @@
         <i class="fa-solid fa-arrow-right-long fa-5x allow"></i>
         <div class="example_result_img_box">
             <div class="example_result_img_box_row example_left_row_1">
-                <div class="example_result_img"></div>
-                <div class="example_result_img"></div>
-                <div class="example_result_img"></div>
+                <div class="example_result_img example_la_muse" id="la_muse" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none" >la_muse</div>
+                </div>
+                <div class="example_result_img example_composition" id="composition" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">composition</div>
+                </div>
+                <div class="example_result_img example_starry_night" id="starry_night" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">starry_night</div>
+                </div>
             </div>
             <div class="example_result_img_box_row example_left_row_2">
-                <div class="example_result_img"></div>
-                <div class="example_result_img"></div>
-                <div class="example_result_img"></div>
-            </div>
-            <div class="example_result_img_box_row example_left_row_3">
-                <div class="example_result_img"></div>
-                <div class="example_result_img"></div>
-                <div class="example_result_img"></div>
-            </div>
+                <div class="example_result_img example_the_wave" id="the_wave" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">the_wave</div>
+                </div>
 
+                <div class="example_result_img example_candy" id="candy" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">candy</div>
+                </div>
+
+                <div class="example_result_img example_feathers" id="feathers" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">feathers</div>
+                </div>
+
+            </div>
+            <div class="example_result_img_box_row example_left_row_3" >
+                <div class="example_result_img example_mosaic" id="mosaic" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">mosaic</div>
+                </div>
+                <div class="example_result_img example_the_scream" id="the_scream" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">the_scream</div>
+                </div>
+                <div class="example_result_img example_udnie" id="udnie" onmouseover="appear(this.id)" onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">udnie</div>
+                </div>
+            </div>
         </div>
     </div>
-    <button type="button" class="try_button">let me try too</button>
-    <p class="upload_title">Upload your photo!</p>
+    <button type="button" class="try_button" onclick="move_to_upload()" >let me try too</button>
+    <p class="upload_title" >Upload your photo!</p>
     <p class="sub_title">TEAM PROJECT 9</p>
     <div class="uploaded_image"></div>
     <input type="file" style="display: none">
@@ -76,9 +97,7 @@
                 </div>
                 <button type="submit" class="save_input_button">Save!</button>
             </form>
-    </div>
-
-
+        </div>
     </div>
 {% endblock %}
 
