@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}">
+{% endblock %}
+
+{% block content %}
+    <p class="introduce">Try applying the styles of different eras!</p>
+    <div class="example_how_convert_box">
+        <div class="example_img "></div>
+        <i class="fa-solid fa-arrow-right-long fa-5x allow"></i>
+        <div class="example_result_img_box">
+            <div class="example_result_img_box_row example_left_row_1">
+                <div class="example_result_img"></div>
+                <div class="example_result_img"></div>
+                <div class="example_result_img"></div>
+            </div>
+            <div class="example_result_img_box_row example_left_row_2">
+                <div class="example_result_img"></div>
+                <div class="example_result_img"></div>
+                <div class="example_result_img"></div>
+            </div>
+            <div class="example_result_img_box_row example_left_row_3">
+                <div class="example_result_img"></div>
+                <div class="example_result_img"></div>
+                <div class="example_result_img"></div>
+            </div>
+
+        </div>
+    </div>
+    <button type="button" class="try_button">let me try too</button>
+    <p class="upload_title">Upload your photo!</p>
+    <p class="sub_title">TEAM PROJECT 9</p>
+    <div class="uploaded_image"></div>
+    <input type="file" style="display: none">
+    <button type="button" class="upload_button">Click here!</button>
+    <p class="select_title">Select Style!</p>
+    <div class="select_box"></div>
+    <button type="button" class="convert_button">Convert!</button>
+    <p class="result_title">Check Style Transfer your Image!!</p>
+    <div class="result_box">
+        <div class="result_img"></div>
+        <div class="result_info">
+            <p class="result_info_desc">This image is an image created by AI </p>
+            <p class="result_info_desc">using <u>Van Gogh's</u></p>
+            <div class="result_info_desc result_style_emphasis">starry_night</div>
+            <p class="result_info_desc">painting style.</p>
+            <p class="result_save_title">Can we use it?</p>
+            <div class="">
+
+            </div>
+            <div class="radio_box">
+                <div class="radio_outline">
+                    <div class="radio_fill" style="display: none"></div>
+                </div>
+                <p class="radio_value">Yes</p>
+            </div>
+            <div class="radio_box">
+                <div class="radio_outline">
+                    <div class="radio_fill" style="display: block"></div>
+                </div>
+                <p class="radio_value">No</p>
+            </div>
+            <form class="save_box" style="display: none">
+                {% csrf_token %}
+                <p>Please fill in the information below!</p>
+                <div class="save_input_row">
+                    <p>Title</p>
+                    <input type="text">
+                </div>
+                <div class="save_input_row">
+                    <p>Password</p>
+                    <input type="text">
+                </div>
+                <button type="submit" class="save_input_button">Save!</button>
+            </form>
+    </div>
+
+
+    </div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="banner"></div>
+    <p class="text_team">TEAM PROJECT 9</p>
+    <div class="text_team_under_bar"></div>
+    <p class="text_desc">
+        These are photos tailored
+        to the style of painters
+        from around the world
+        through artificial intelligence AI.
+    </p>
+    <div class="content_box">
+        <div class="content_box_wrapper">
+            <div class="content_col first_col">
+                <div class="content first_content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+            </div>
+            <div class="content_col second_col">
+                <div class="content first_content"></div>
+                <div class="content"></div>
+                <div class="content"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
