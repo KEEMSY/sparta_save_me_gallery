@@ -2,7 +2,7 @@ from django.core.exceptions import MultipleObjectsReturned
 from django.test import TestCase
 
 from activityapp.models import Activity
-from activityapp.services.activity_service import (get_activity_page_load, create_activity, activity_load)
+from activityapp.services.activity_service import (get_activity_page_load, create_activity, load_activity, )
 
 # Given
 # When
@@ -57,7 +57,7 @@ class TestView(TestCase):
         # When
         all_activities = []
         for i in range(3):
-            all_activities.append(activity_load(i))
+            all_activities.append(load_activity(i))
 
         # Then
         for actitivy in all_activities:
@@ -68,14 +68,14 @@ class TestView(TestCase):
 
         print('all_activities',all_activities)
 
-    def test_load_latest_activities(self):
+    def test_load_latest_activities_upto_20(self):
         # Given
         # 종류(3) 별로 5개씩 만듬
-        activity_list = [[create_activity(i, j, 123, 123) for i in range(3)] for j in range(21, 26)]
+        activity_list = [[create_activity(i, j, 123, 123) for i in range(3)] for j in range(21, 50)]
 
         all_activities = []
         for i in range(3):
-            all_activities.append(activity_load(i))
+            all_activities.append(load_activity(i))
 
         for actitivy in all_activities:
             print('activity',actitivy)
@@ -83,12 +83,14 @@ class TestView(TestCase):
                 print("model_name",one.model_name)
                 print("name",one.name)
         # When
-        new_activity_list = [[create_activity(a, b, 123, 123) for a in range(3)] for b in range(26, 30)]
+        new_activity_list = [[create_activity(a, b, 123, 123) for a in range(3)] for b in range(50, 100)]
         print(("@@@@@  after  @@@@@"))
+
+
         # Then
         new_all_activities = []
         for i in range(3):
-            new_all_activities.append(activity_load(i))
+            new_all_activities.append(load_activity(i))
 
         for actitivy in new_all_activities:
             print('activity', actitivy)
