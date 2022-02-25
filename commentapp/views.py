@@ -11,7 +11,7 @@ def comment_page(request):
     if request.method == 'GET':
         page = request.GET.get('page')
         comments = get_comment_page(page)
-        return render(request, 'commentapp/comment_test.html', {'comments': comments})
+        return render(request, 'commentapp/comments.html', {'comments': comments})
     else: #POST요청으로 왔을때
         username = request.POST['username']
         password=request.POST['password']
