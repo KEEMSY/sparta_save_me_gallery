@@ -1,10 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/info.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="footer">
+        <div class="footer_gallery_desc">
+            <div class="footer_gallery_desc_img"></div>
+            <div class="footer_gallery_desc_text_box">
+                <p class="footer_text_box_title">TEAM PROJECT 9</p>
+                <p class="footer_text_box_content">GatherTown 공부방 20 9호 9조</p>
+                <p class="footer_text_box_content">View on our site!</p>
+                <p class="footer_text_box_content">Thank you for watching!</p>
+            </div>
+        </div>
+    </div>
+    <div class="developers_title">
+        <p>Developers</p>
+
+    </div>
+    <div class="developer_profile">
+        <div class="profile_row">
+            <div class="profile_avatar" style="background-image: url('/static/img/js.png')"></div>
+            <div class="profile_info">
+                <p class="profile_name">Kim Jase Seong</p>
+                <p class="profile_desc">Position : Frontend</p>
+                <p class="profile_desc">View on our site!</p>
+                <p class="profile_desc">Thank you for watching!</p>
+            </div>
+        </div>
+        <div class="mention">
+            <p class="mention_emphasis">"</p>
+            <p>Leave the front end to me</p>
+        </div>
+        <div class="mention">
+            <p>Rather Good!</p>
+            <p class="mention_emphasis">"</p>
+        </div>
+    </div>
+
+    <div class="developer_profile">
+        <div class="profile_row ">
+            <div class="profile_avatar avatar_right" style="background-image: url('/static/img/ws.png')"></div>
+            <div class="profile_info info_right">
+                <p class="profile_name">Song Wonseok</p>
+                <p class="profile_desc">Position : AI</p>
+                <p class="profile_desc">View on our site!</p>
+                <p class="profile_desc">Thank you for watching!</p>
+            </div>
+        </div>
+        <div class="mention mention_right">
+            <p class="mention_emphasis">"</p>
+            <p>This is my first time with AI,</p>
+        </div>
+        <div class="mention mention_right">
+            <p>is it okay?</p>
+            <p class="mention_emphasis">"</p>
+        </div>
+    </div>
+    <div class="developer_profile">
+        <div class="profile_row">
+            <div class="profile_avatar" style="background-image: url('/static/img/sy.png')"></div>
+            <div class="profile_info">
+                <p class="profile_name">KIMSEONGYEON</p>
+                <p class="profile_desc">Position : Backend</p>
+                <p class="profile_desc">No Pain No Gain</p>
+                <p class="profile_desc">Thank you for watching!</p>
+            </div>
+        </div>
+        <div class="mention">
+            <p class="mention_emphasis">"</p>
+            <p>Power of optimism! </p>
+        </div>
+        <div class="mention">
+            <p>Rather Good!</p>
+            <p class="mention_emphasis">"</p>
+        </div>
+    </div>
+
+    <div class="developer_profile ">
+        <div class="profile_row ">
+            <div class="profile_avatar avatar_right" style="background-image: url('/static/img/gu.png')"></div>
+            <div class="profile_info info_right">
+                <p class="profile_name">Lee ga-eul</p>
+                <p class="profile_desc">Position : Backend</p>
+                <p class="profile_desc">Thanks to our team support!</p>
+                <p class="profile_desc">Thank you for visiting our site!</p>
+            </div>
+        </div>
+        <div class="mention mention_right">
+            <p class="mention_emphasis">"</p>
+            <p>Backend I can do it, </p>
+        </div>
+        <div class="mention mention_right">
+            <p>but I need a lot of help</p>
+            <p class="mention_emphasis">"</p>
+        </div>
+    </div>
+    <div class="developer_profile">
+        <div class="profile_row">
+            <div class="profile_avatar" style="background-image: url('/static/img/sm.png')"></div>
+            <div class="profile_info">
+                <p class="profile_name">choi su-min</p>
+                <p class="profile_desc">GatherTown 공부방 20 9호 9조</p>
+                <p class="profile_desc">View on our site!</p>
+                <p class="profile_desc">Thank you for watching!</p>
+            </div>
+        </div>
+        <div class="mention">
+            <p class="mention_emphasis">"</p>
+            <p>If you have any information you need, </p>
+        </div>
+        <div class="mention">
+            <p>I will steal it.</p>
+            <p class="mention_emphasis">"</p>
+        </div>
+    </div>
+    <div class="developer_profile">
+        <div class="profile_row ">
+            <div class="profile_avatar avatar_right" style="background-image: url('/static/img/jh.png')"></div>
+            <div class="profile_info info_right">
+                <p class="profile_name">Kim Jun Hyung</p>
+                <p class="profile_desc">Position : Backend</p>
+                <p class="profile_desc">View on our site!</p>
+                <p class="profile_desc">Thank you for watching!</p>
+            </div>
+        </div>
+        <div class="mention mention_right">
+            <p class="mention_emphasis">"</p>
+            <p>Everyone, take care of your health.</p>
+        </div>
+        <div class="mention mention_right">
+            <p>I am very ill.</p>
+            <p class="mention_emphasis">"</p>
+        </div>
+    </div>
+    <div style="margin-bottom: 500px"></div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
