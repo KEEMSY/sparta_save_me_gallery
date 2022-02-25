@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Save 9allery!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/no.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://kit.fontawesome.com/97ea407338.js" crossorigin="anonymous"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<div id="navbar">
+    <div class="logo"></div>
+    <div class="nav_context_box">
+        <a class="column_1 nav_masterpiece">
+            <p>Masterpiece</p>
+        </a>
+        <a class="column_1 nav_activities">
+            <p>Activities</p>
+        </a>
+        <a class="column_1 nav_comments">
+            <p>Comments</p>
+        </a>
+        <a class="column_1 nav_info">
+            <p>Info</p>
+        </a>
+    </div>
+</div>
+{% block content %}
+{% endblock %}
+<div id="footer">
+    <div class="footer_gallery_desc">
+        <div class="footer_gallery_desc_img"></div>
+        <div class="footer_gallery_desc_text_box">
+            <p class="footer_text_box_title">TEAM PROJECT 9</p>
+            <p class="footer_text_box_content">GatherTown 공부방 20 9호 9조</p>
+            <p class="footer_text_box_content">View on our site!</p>
+            <p class="footer_text_box_content">Thank you for watching!</p>
+        </div>
+    </div>
+    <div class="footer_developers">
+        <div class="footer_profile_box">
+            <div class="footer_profile" style="background-image: url('/static/img/js.png')"></div>
+            <div class="footer_profile" style="background-image: url('/static/img/sy.png')"></div>
+            <div class="footer_profile" style="background-image: url('/static/img/ws.png')"></div>
+            <div class="footer_profile" style="background-image: url('/static/img/gu.png')"></div>
+            <div class="footer_profile" style="background-image: url('/static/img/sm.png')"></div>
+        </div>
+    </div>
+</div>
+
+{% block script %}
+{% endblock %}
+</body>
+</html>
