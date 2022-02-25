@@ -1,5 +1,5 @@
 import json
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 
@@ -17,8 +17,7 @@ def comment_page(request):
         password=request.POST['password']
         comment=request.POST['comment']
         add_comment(username,password,comment)
-        context = {'msg': 'Successfully Saved!' }
-        return HttpResponse(json.dumps(context), content_type='application/json')
+        return JsonResponse({'msg': 'Successfully Saved!'})
 
 
 def delete(request):
@@ -26,8 +25,7 @@ def delete(request):
     password = request.POST['password']
     comment = request.POST['comment']
     msg = delete_comment(username, password, comment)
-    context = { 'msg' : msg }
-    return HttpResponse(json.dumps(context), content_type='application/json')
+    return JsonResponse({ 'msg' : msg })
 
 
 
