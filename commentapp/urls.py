@@ -6,5 +6,5 @@ app_name = "commentapp"
 
 urlpatterns = [
     path('', views.comment_page, name='show_comments'),
-    path('delete', views.delete, name='delete'),
+    path('delete/', views.delete, name='delete'),
 ]

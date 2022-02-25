@@ -14,15 +14,20 @@ def home(request):
     if request.method == "GET":
         activities = get_activity_page_load(1)
         return render(
-            request, "templates/activityapp/test_index.html", {"activities": activities}
+            request, "index.html", {"activities": activities}
         )
     else:
         return JsonResponse({"activities": get_activity_page_load(1)})
 
 
+# info페이지
+def info(request):
+    return render(request, "info.html")
+
+
 # 업로드 페이지
 def upload_activity_page(request):
-    return render(request, "templates/activityapp/upload.html")
+    return render(request, "activityapp/upload.html")
 
 
 # POST인경우만 존재
