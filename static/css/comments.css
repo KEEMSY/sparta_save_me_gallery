@@ -1,6 +1,7 @@
 .wrapper{
     width: 1420px;
     margin: 0 auto;
+    font-family: 'Alegreya', sans-serif;
 }
 
 .comments_title{
@@ -9,13 +10,26 @@
     margin-top: 100px;
     margin-left: 120px;
     color: #390D0D;
+
+}
+
+.write_button{
+    position: relative;
+    float: right;
+    top:-50px;
+    right: 130px;
+    width: 180px;
+    height: 60px;
+    background-color: #390D0D;
+    color: white;
+    font-size: 20px;
 }
 
 .comment_container{
-    margin-top: 150px;
+    margin-top: 120px;
     width: 100%;
     height: 1005px;
-    background-color: #AAA7A7;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,7 +40,6 @@
 
     width: 1060px;
     height : 1000px;
-    background-color: aqua;
     font-family: 'Alegreya', sans-serif;
     color: #390D0D;
 }
@@ -40,6 +53,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
 
 }
 
@@ -53,6 +67,8 @@
 }
 .comment_content{
     width: 350px;
+    margin-top: 30px;
+    font-size: 30px;
 }
 
 .comment_profile{
@@ -60,4 +76,99 @@
     width: 200px;
     height:200px;
     background-color: #AAA7A7;
+}
+
+.page{
+    width : 150px;
+    height : 20px;
+    margin : 20px auto 200px;
+    font-size: 60px;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.modal_container{
+    position: absolute;
+    top :-80px;
+    display: block;
+    width: 100%;
+    height: 200%;
+    background-color: rgb(41,19,19,0.5);
+    font-family: 'Alegreya', sans-serif;
+    z-index: 2;
+}
+
+.modal_box{
+    position: relative;
+    top: 400px;
+    margin: 0 auto;
+    width: 1100px;
+    height: 500px;
+    background-color: #C4C4C4;
+}
+
+.modal_close{
+    left: 1060px;
+    width: 40px;
+    height: 40px;
+    background-color: #ab0808;
+    opacity: 0.6;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.modal_close:hover{
+    opacity: 1;
+
+}
+
+
+.user_info_row{
+    position: relative;
+    top: 50px;
+    left: 70px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+
+
+.user_info_row input{
+    width: 200px;
+    height: 40px;
+    background-color: white;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.write_comment{
+    position: relative;
+    top: 80px;
+    left: 30px;
+    width: 850px;
+    height: 320px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+}
+
+.confirm_button{
+    position: relative;
+    top: 45px;
+    left : 50px;
+    width: 160px;
+    height: 80px;
+    background-color: #785252;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
 }
