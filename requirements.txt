@@ -1,9 +1,7 @@
-파이썬 : 3.9
-black 21.12b0         pip install black==21.12b0
-django 4.0            pip install django==4.0
-django-stubs 1.9.0   pip install django-stubs==1.9.0
-mypy 0.931           pip install mypy==0.931
-isort 5.10.1            pip install isort==5.10.1
-PyMySQL 1.0.2 	    pip install pymysql==1.0.2
-types-PyMySQL 1.0.6   pip install types-PyMySQL==1.0.6
-
+django==4.0
+django-stubs==1.9.0
+mypy==0.931
+isort==5.10.1
+pymysql==1.0.2
+types-PyMySQL==1.0.6
+black==21.12b0

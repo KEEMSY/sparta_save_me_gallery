@@ -1,6 +1,6 @@
 .idea/
 venv/
-
+test.sh
 
 .DS_Store
 # Created by https://www.toptal.com/developers/gitignore/api/python,django
@@ -242,5 +242,8 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+
+#for gaeul_test
+#comment_test.html
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django
