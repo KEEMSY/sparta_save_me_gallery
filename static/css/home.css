@@ -53,11 +53,14 @@
 .content{
     width :600px;
     height : 700px;
-    background-color: #AAA7A7;
+    background-color: white;
     margin-top: 200px;
     transition-property: transform;
     transition-duration:0.5s;
     transition-timing-function: ease-in;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .content:hover{

@@ -10,7 +10,7 @@
     margin-top: 100px;
     margin-left: 120px;
     color: #390D0D;
-
+    font-weight: bold;
 }
 
 .write_button{
@@ -37,14 +37,38 @@
 }
 
 .comments_box{
-
+    position: relative;
+    top: -46px;
     width: 1060px;
     height : 1000px;
     font-family: 'Alegreya', sans-serif;
     color: #390D0D;
 }
 
+.delete_button{
+    position: relative;
+    float: right;
+    top: 53px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #390D0D;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_button:hover{
+    background-color: #390D0D;
+    color: white;
+    cursor: pointer;
+}
+
 .comment{
+    position: relative;
     width: 100%;
     height: 300px;
     border: 3px solid #390D0D;
@@ -66,9 +90,11 @@
 
 }
 .comment_content{
-    width: 350px;
+    width: 700px;
+    height: 130px;
     margin-top: 30px;
     font-size: 30px;
+    overflow-y: scroll;
 }
 
 .comment_profile{
@@ -76,13 +102,21 @@
     width: 200px;
     height:200px;
     background-color: #AAA7A7;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.comment_profile img{
+    width: 100%;
+    height: 100%;
 }
 
 .page{
-    width : 150px;
+    width : 200px;
     height : 20px;
     margin : 20px auto 200px;
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Alegreya', sans-serif;
 }
 
@@ -171,4 +205,23 @@
     color:white;
     font-size: 20px;
     cursor: pointer;
+}
+
+.modal_delete_box{
+    position: absolute;
+
+}
+
+.delete_box{
+    height: 200px;
+
+}
+
+.modal_delete_row{
+    left: 150px;
+}
+.modal_delete_button{
+    width: 900px;
+    top: 60px;
+    left: 90px;
 }
