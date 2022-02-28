@@ -10,7 +10,7 @@ def get_comment_page(page:int)-> Page:
     return comments
 
 def add_comment(username:str, password:str, comment:str) -> Comment:
-    profile_img = "/static/img/"+str(random.randrange(1,6))+".jpg"
+    profile_img = "/static/img/"+str(random.randrange(1,9))+".jpg"
     return Comment.objects.create(username=username,password = password,comment=comment,profile_img=profile_img)
 
 def delete_comment(password:str, id:str):
