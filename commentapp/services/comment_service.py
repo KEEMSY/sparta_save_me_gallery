@@ -11,9 +11,15 @@ def get_comment_page(page:int)-> Page:
 
 def add_comment(username:str, password:str, comment:str) -> Comment:
     profile_img = "/static/img/"+str(random.randrange(1,9))+".jpg"
-    return Comment.objects.create(username=username,password = password,comment=comment,profile_img=profile_img)
+    if username == '' or password == '':
+        msg = 'Please check the blank!'
+        return msg
+    else:
+        Comment.objects.create(username=username, password=password, comment=comment, profile_img=profile_img)
+        msg = 'Successfully saved!'
+        return msg
 
-def delete_comment(password:str, id:str):
+def delete_comment(username:str ,password:str, id:str):
     #작성자명과, 댓글내용으로 해당 댓글객체를 가져와서
     found_comment = Comment.objects.filter(pk=id).get()
     #유저이름과 댓글내용 일치하는 댓글을 찾아서 found_comment에 담음
@@ -26,9 +32,12 @@ def delete_comment(password:str, id:str):
             msg = 'Incorrect password'
             return msg
     else:# found_comment가 없다면?
-        msg = 'Wrong approach'
-        return msg
-
+        if username == '' or password == '': #username 이나 password가 없니?
+            msg = 'Please check the blank!'
+            return msg
+        else:
+            msg = 'Wrong approach'
+            return msg
 
 
 
