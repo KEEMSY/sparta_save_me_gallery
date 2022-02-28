@@ -18,6 +18,8 @@ from django.urls import include, path
 
 from activityapp import views
 
+app_name = "projectapp"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
 
