@@ -26,9 +26,23 @@
             <div class="swiper-button-prev preview_allow"></div>
 
         </div>
+
+        <div class="select_style_name_box">
+            <div class="under_bar" id="under_line_preview"></div>
+            {% for model in all_activities %}
+                <div class="select_style_name" id="style_{{ forloop.counter0 }}" onclick="move_model_slide(this.id)">
+                    {{ model.0.model_name }}
+                </div>
+            {% endfor %}
+        </div>
         <div class="choice_row">
-            <a href="/activities/choice/1" class="choice"></a>
-            <a href="/activities/choice/2" class="choice"></a>
+            <div class="layer_to_hover for_1"></div>
+            <div class="layer_to_hover for_2"></div>
+            <a href="/activities/choice/1" class="choice1 choice">
+
+                <p class="choice1_desc">Try these Style!</p>
+            </a>
+            <a href="/activities/choice/2" class="choice choice2"></a>
         </div>
     </div>
 {% endblock %}

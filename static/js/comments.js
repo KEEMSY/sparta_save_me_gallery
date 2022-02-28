@@ -10,7 +10,6 @@ $(document).ready(function() {
         }
     });
     comment_check();
-
 });
 
 
@@ -78,7 +77,6 @@ function delete_comment(){
     let target_id = document.getElementById('delete_target').innerText
     let comment = document.getElementById('comment_content_' + target_id).innerText
     comment = comment.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-    console.log(comment)
     $.ajax({
         type: 'POST',
         url: '/comments/delete/',

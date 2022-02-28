@@ -51,6 +51,7 @@
 }
 
 .content{
+    position: relative;
     width :600px;
     height : 700px;
     background-color: white;
@@ -58,13 +59,25 @@
     transition-property: transform;
     transition-duration:0.5s;
     transition-timing-function: ease-in;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border: 1px solid #390D0D;
 }
 
 .content:hover{
     transform: scale(1.1);
+}
+
+@keyframes slide_top {
+    from{
+        opacity: 0;
+        top: 500px;
+    }
+    to{
+        opacity: 1;
+        top:0;
+    }
 }
 
 .checker{
@@ -73,6 +86,7 @@
     height: 40px;
     background-color: aqua;
     opacity: 0;
+    z-index: 2;
 }
 
 .delete_button{
@@ -87,7 +101,9 @@
     justify-content: center;
     color: #390D0D;
     cursor: pointer;
+    z-index: 1;
     opacity: 0;
+
 }
 
 @keyframes appear {

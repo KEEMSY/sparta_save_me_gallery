@@ -11,26 +11,52 @@
     <p class="introduce">Change the photos you want to the style you want to create!</p>
     <div class="example_how_convert_box">
         <div class="example_img "></div>
+        <i class="fa-solid fa-plus fa-5x model_plus"></i>
+        <div class="example_img example_img_texture"></div>
         <i class="fa-solid fa-arrow-right-long fa-5x allow"></i>
-        <div class=""></div>
+        <div class="example_result_img "></div>
     </div>
-    <button type="button" class="try_button" onclick="">let me try too</button>
-    <p class="upload_title">Upload your photo!</p>
-    <p class="sub_title">select base photo</p>
-    <div class="uploaded_image" id="preview_image"></div>
-    <input type="file" style="display: none" id="upload_file" onchange="">
-    <label for="upload_file" class="upload_button">Click here!</label>
+    <button type="button" class="try_button" onclick="move_to_upload()">let me try too</button>
+
 
     <p class="upload_title">Upload your photo!</p>
-    <p class="sub_title">select photo by style</p>
-    <div class="uploaded_image" id="preview_image"></div>
-    <input type="file" style="display: none" id="upload_file" onchange="">
-    <label for="upload_file" class="upload_button">Click here!</label>
+    <div class="upload_row">
+        <div class="upload_origin">
+            <p class="sub_title">select base photo</p>
+            <div class="uploaded_image" id="preview_image_origin"></div>
+            <input type="file" style="display: none" id="upload_origin_file" onchange="upload_origin_image()">
+            <label for="upload_origin_file" class="upload_button">Click here!</label>
+        </div>
 
-    <button type="button" class="convert_button" onclick="covert_img()">Convert!</button>
+        <div class="upload_style">
+            <p class="sub_title">select photo by style</p>
+            <div class="tip_style" onclick="open_tip_box()">?</div>
+            <div class="modal_tip" id="modal_tip" style="display: none">
+                <p>The closer the image is to the texture, the better it will come out!</p>
+                <div class="modal_tip_row">
+                    <div class="tip_example">
+                        <img src="/static/img/example_img/sight.png">
+                    </div>
+                    <div class="tip_example">
+                        <img src="/static/img/example_img/texture.png">
+                    </div>
+                </div>
+                <div class="tip_example_row">
+                    <i class="fa-solid fa-xmark fa-5x sight_check"></i>
+                    <i class="fa-solid fa-check fa-5x texture_check"></i>
+                </div>
+            </div>
+            <div class="uploaded_image" id="preview_image_style"></div>
+            <input type="file" style="display: none" id="upload_style_file" onchange="upload_style_image()">
+            <label for="upload_style_file" class="upload_button">Click here!</label>
+        </div>
+
+    </div>
+
+    <button type="button" class="convert_button" onclick="covert_custom_img()">Convert!</button>
     <p class="result_title">Check Style Transfer your Image!!</p>
     <div class="result_box">
-        <div class="result_img" >
+        <div class="result_img">
             <img id="result_img" src="/">
         </div>
         <div class="result_info">
@@ -43,18 +69,18 @@
 
             </div>
             <div class="radio_box">
-                <div class="radio_outline" onclick="">
+                <div class="radio_outline" onclick="open_save_box()">
                     <div class="radio_fill" style="display: none"></div>
                 </div>
-                <p class="radio_value" >Yes</p>
+                <p class="radio_value">Yes</p>
             </div>
             <div class="radio_box">
-                <div class="radio_outline" onclick="">
+                <div class="radio_outline" onclick="close_save_box()">
                     <div class="radio_fill" style="display: block"></div>
                 </div>
                 <p class="radio_value">No</p>
             </div>
-            <div class="save_box" id="save_box"  style="display: none">
+            <div class="save_box" id="save_box" style="display: none">
                 <p>Please fill in the information below!</p>
                 <div class="save_input_row">
                     <p>Title</p>
