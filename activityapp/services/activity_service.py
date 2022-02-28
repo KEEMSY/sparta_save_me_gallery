@@ -11,8 +11,21 @@ def get_activity_page_load(page: int) -> Activity:
     return activity_list
 
 
-def create_activity(model_name: str, name: str, pwd: str, img: str) -> Activity:
-    return Activity.objects.create(model_name=model_name, name=name, password=pwd, img=img)
+def create_activity(model_name: str, name: str, pwd: int, img: str) -> str:
+    if model_name == '' or name == '' or pwd == '' or img == '':
+        return 'fail'
+    else:
+        Activity.objects.create(model_name=model_name, name=name, password=pwd, img=img)
+        return 'success'
+
+
+def delete_activity(pk, password) -> dict:
+    target_activity = Activity.objects.get(pk=pk)
+    if target_activity.password == str(password):
+        target_activity.delete()
+        return {'msg': 'success'}
+    else:
+        return {'msg': 'fail'}
 
 
 # 최신순 최대 20개까지 가옴옴
