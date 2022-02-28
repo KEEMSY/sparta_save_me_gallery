@@ -13,11 +13,11 @@ def add_comment(username:str, password:str, comment:str) -> Comment:
     profile_img = "/static/img/"+str(random.randrange(1,6))+".jpg"
     return Comment.objects.create(username=username,password = password,comment=comment,profile_img=profile_img)
 
-def delete_comment(username:str, password:str, comment:str):
+def delete_comment(password:str, id:str):
     #작성자명과, 댓글내용으로 해당 댓글객체를 가져와서
-    found_comment = Comment.objects.filter(username=username, comment=comment).get()
+    found_comment = Comment.objects.filter(pk=id).get()
     #유저이름과 댓글내용 일치하는 댓글을 찾아서 found_comment에 담음
-    if found_comment: #found_comment가 있으면.. (근데 작성자, 비밀번호가 같은글이 여러개면?)
+    if found_comment: #found_comment가 있으면..
         if password == found_comment.password:
             found_comment.delete()
             msg = 'Successfully deleted'
