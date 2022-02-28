@@ -91,19 +91,25 @@ var swiper = new Swiper(".select_box", {
     },
 });
 
-swiper.on('transitionEnd', function () {
-    let name_list = document.getElementsByClassName('select_style_name')
-    for (let i = 0; i < name_list.length; i++) {
-        name_list[i].style.backgroundColor = ''
-        name_list[i].style.color = '#390D0D'
-    }
-    let name = document.getElementById('style_' + swiper.realIndex)
-    name.style.backgroundColor = '#390D0D'
-    name.style.color = 'white'
-});
+
+
 
 function test(index) {
     swiper.slideTo(index)
+}
+
+let underline_2 = document.getElementById('select_style')
+let select_list = document.querySelectorAll('div.select_style_name ')
+
+select_list.forEach((menu)=>
+    menu.addEventListener('click',(e)=> draw_select_style(e)))
+
+
+function draw_select_style(e){
+    console.log('function in ')
+    underline_2.style.left = e.currentTarget.offsetLeft + "px";
+    underline_2.style.width = e.currentTarget.offsetWidth + "px";
+    underline_2.style.top = 10 + e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px";
 }
 
 function covert_img() {
@@ -178,7 +184,7 @@ function save_result_img() {
             'pwd': pwd,
             'model_name': model_name,
             'made_image': mage_URL
-            },
+        },
         success: function(response){
             console.log(response['msg'])
         }

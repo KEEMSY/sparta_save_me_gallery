@@ -13,34 +13,90 @@
 .preview_box{
     width: 1520px;
     height : 600px;
-    background-color: #AAA7A7;
+    background-color: #ffffff;
     margin: 0 auto;
 
 }
 
 .preview_allow{
     color: #390D0D;
+    top : 60px;
+}
+
+#select_style{
+    position : absolute;
+    left: 0;
+    top : 0;
+    width: 0;
+    height: 4px;
+    background-color: #390D0D;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.select_style_name:hover{
+    background-color: #390D0D;
+    color:white;
+}
+
+.select_style_name_box{
+    position: relative;
+    width: 1200px;
+    height: 30px;
+    top: -550px;
+    left: 190px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    font-family: 'Alegreya', sans-serif;
+    z-index: 3;
+    cursor: pointer;
 }
 
 .preview_model{
-    top: 50px;
+    top: 150px;
     width : 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    align-content: space-evenly;
-    justify-content: center;
+    height: 450px;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
+.preview_model::-webkit-scrollbar{
+    height: 20px;
+    bottom: 10px;
+}
+
+.preview_model::-webkit-scrollbar-track {
+    background-color: gray;
+    border-radius: 10px;
+
+}
+
+
+.preview_model::-webkit-scrollbar-thumb {
+    background-color: #390D0D;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+
+}
+
+
 .model_img_box{
-    margin-right: 100px;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    margin-left: 200px;
+
 }
 
 .model_img_box img{
-
     width : 100%;
     height: 100%;
 }
+
 
 .choice_row{
     width: 100%;
@@ -56,6 +112,42 @@
 .choice{
     width: 700px;
     height: 500px;
-    background-color: #AAA7A7;
+    border:4px solid #390D0D;
+}
+
+.choice:visited{
+    color: inherit;
+}
+.layer_to_hover{
+    position: absolute;
+    margin-left: 4px;
+    width: 700px;
+    height: 500px;
+    background-color: #785252;
+    opacity: 0.5;
+    display: none;
+}
+
+.for_2{
+    margin-left: 816px;
+}
+
+
+
+.choice1{
+    background-image: url("/static/img/done.png");
+    background-repeat:no-repeat;
+    background-position: top;
+    background-size: contain;
+
+}
+
+.choice1_desc{
+    width: 400px;
+    margin: 400px auto 0 ;
+    font-size: 60px;
+    font-family: 'Alegreya', sans-serif;
+    color: #390D0D;
+
 }
 

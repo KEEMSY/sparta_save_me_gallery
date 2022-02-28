@@ -1,5 +1,5 @@
 import json
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 
@@ -22,13 +22,13 @@ def comment_page(request):
 
 
 def delete(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    comment = request.POST['comment']
-    msg = delete_comment(username, password, comment)
-    context = { 'msg' : msg }
-    return HttpResponse(json.dumps(context), content_type='application/json')
-
+    print(request.body)
+    jsonObject = json.loads(request.body.decode('utf-8'))
+    username = jsonObject.get('username')
+    password = jsonObject.get('password')
+    id = jsonObject.get('id')
+    msg = delete_comment(username, password, id)
+    return JsonResponse({ 'msg' : msg })
 
 
 

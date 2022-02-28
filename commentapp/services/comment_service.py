@@ -22,17 +22,17 @@ def add_comment(username:str, password:str, comment:str):
     #댓글모델에 profile_img를 저장해야 해당이미지를 이댓글이 계속 가져가지 않을까요?
     return new_comment
 
-def delete_comment(username:str, password:str, comment:str):
+def delete_comment(username:str, password:str, id:str):
     #작성자명과, 댓글내용으로 해당 댓글객체를 가져와서
-    found_comment = Comment.objects.filter(username=username, comment=comment).get()
+    found_comment = Comment.objects.filter(username=username, pk=id).get()
     #유저이름과 댓글내용 일치하는 댓글을 찾아서 found_comment에 담음
-    if found_comment: #found_comment가 있으면.. (근데 작성자, 비밀번호가 같은글이 여러개면?)
+    if found_comment: #found_comment가 있으면..
         if password == found_comment.password:
             found_comment.delete()
             msg = 'Successfully deleted'
             return msg
         else:#비밀번호가 일치하지 않는다면
-            msg = 'incorrect password'
+            msg = 'Incorrect password'
             return msg
     else:# found_comment가 없다면?
         msg = 'Wrong approach'

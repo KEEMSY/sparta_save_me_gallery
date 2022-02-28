@@ -166,6 +166,13 @@
     color:#390D0D;
 }
 
+.upload_row{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
 .sub_title{
     width: 220px;
     font-size: 30px;

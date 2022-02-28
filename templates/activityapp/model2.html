@@ -15,22 +15,30 @@
         <div class=""></div>
     </div>
     <button type="button" class="try_button" onclick="">let me try too</button>
-    <p class="upload_title">Upload your photo!</p>
-    <p class="sub_title">select base photo</p>
-    <div class="uploaded_image" id="preview_image"></div>
-    <input type="file" style="display: none" id="upload_file" onchange="">
-    <label for="upload_file" class="upload_button">Click here!</label>
+
 
     <p class="upload_title">Upload your photo!</p>
-    <p class="sub_title">select photo by style</p>
-    <div class="uploaded_image" id="preview_image"></div>
-    <input type="file" style="display: none" id="upload_file" onchange="">
-    <label for="upload_file" class="upload_button">Click here!</label>
+    <div class="upload_row">
+        <div class="upload_origin">
+            <p class="sub_title">select base photo</p>
+        <div class="uploaded_image" id="preview_image"></div>
+        <input type="file" style="display: none" id="upload_file" onchange="">
+        <label for="upload_file" class="upload_button">Click here!</label>
+        </div>
+
+        <div class="upload_style">
+            <p class="sub_title">select photo by style</p>
+        <div class="uploaded_image" id="preview_image"></div>
+        <input type="file" style="display: none" id="upload_file" onchange="">
+        <label for="upload_file" class="upload_button">Click here!</label>
+        </div>
+
+    </div>
 
     <button type="button" class="convert_button" onclick="covert_img()">Convert!</button>
     <p class="result_title">Check Style Transfer your Image!!</p>
     <div class="result_box">
-        <div class="result_img" >
+        <div class="result_img">
             <img id="result_img" src="/">
         </div>
         <div class="result_info">
@@ -46,7 +54,7 @@
                 <div class="radio_outline" onclick="">
                     <div class="radio_fill" style="display: none"></div>
                 </div>
-                <p class="radio_value" >Yes</p>
+                <p class="radio_value">Yes</p>
             </div>
             <div class="radio_box">
                 <div class="radio_outline" onclick="">
@@ -54,7 +62,7 @@
                 </div>
                 <p class="radio_value">No</p>
             </div>
-            <div class="save_box" id="save_box"  style="display: none">
+            <div class="save_box" id="save_box" style="display: none">
                 <p>Please fill in the information below!</p>
                 <div class="save_input_row">
                     <p>Title</p>
