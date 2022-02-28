@@ -1,8 +1,5 @@
 import random
-import json
 from django.core.paginator import Page, Paginator
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
 from commentapp.models import Comment
 
 
@@ -12,15 +9,9 @@ def get_comment_page(page:int)-> Page:
     comments = paginator.get_page(page)#현재 페이지에 표시될 댓글들을 넘겨줌
     return comments
 
-def add_comment(username:str, password:str, comment:str):
+def add_comment(username:str, password:str, comment:str) -> Comment:
     profile_img = "/static/img/"+str(random.randrange(1,6))+".jpg"
-    new_comment = Comment.objects.create(
-        username=username,
-        password = password,
-        comment=comment,
-        profile_img=profile_img)
-    #댓글모델에 profile_img를 저장해야 해당이미지를 이댓글이 계속 가져가지 않을까요?
-    return new_comment
+    return Comment.objects.create(username=username,password = password,comment=comment,profile_img=profile_img)
 
 def delete_comment(username:str, password:str, comment:str):
     #작성자명과, 댓글내용으로 해당 댓글객체를 가져와서
@@ -32,7 +23,7 @@ def delete_comment(username:str, password:str, comment:str):
             msg = 'Successfully deleted'
             return msg
         else:#비밀번호가 일치하지 않는다면
-            msg = 'incorrect password'
+            msg = 'Incorrect password'
             return msg
     else:# found_comment가 없다면?
         msg = 'Wrong approach'
