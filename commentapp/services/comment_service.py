@@ -1,8 +1,5 @@
 import random
-import json
 from django.core.paginator import Page, Paginator
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
 from commentapp.models import Comment
 
 
@@ -12,32 +9,34 @@ def get_comment_page(page:int)-> Page:
     comments = paginator.get_page(page)#현재 페이지에 표시될 댓글들을 넘겨줌
     return comments
 
-def add_comment(username:str, password:str, comment:str):
-    profile_img = "/static/img/"+str(random.randrange(1,6))+".jpg"
-    new_comment = Comment.objects.create(
-        username=username,
-        password = password,
-        comment=comment,
-        profile_img=profile_img)
-    #댓글모델에 profile_img를 저장해야 해당이미지를 이댓글이 계속 가져가지 않을까요?
-    return new_comment
+def add_comment(username:str, password:str, comment:str) -> Comment:
+    profile_img = "/static/img/"+str(random.randrange(1,9))+".jpg"
+    if username == '' or password == '' or comment == '':
+        msg = 'Please check the blank!'
+        return msg
+    else:
+        Comment.objects.create(username=username, password=password, comment=comment, profile_img=profile_img)
+        msg = 'Successfully saved!'
+        return msg
 
-def delete_comment(username:str, password:str, comment:str):
+def delete_comment(username:str ,password:str, id:str):
     #작성자명과, 댓글내용으로 해당 댓글객체를 가져와서
-    found_comment = Comment.objects.filter(username=username, comment=comment).get()
+    found_comment = Comment.objects.filter(pk=id).get()
     #유저이름과 댓글내용 일치하는 댓글을 찾아서 found_comment에 담음
-    if found_comment: #found_comment가 있으면.. (근데 작성자, 비밀번호가 같은글이 여러개면?)
-        if password == found_comment.password:
+    if found_comment: #found_comment가 있으면..
+        if str(password) == found_comment.password:
             found_comment.delete()
             msg = 'Successfully deleted'
             return msg
+        elif username == '' or password == '': #username 이나 password가 없니?
+            msg = 'Please check the blank!'
+            return msg
         else:#비밀번호가 일치하지 않는다면
-            msg = 'incorrect password'
+            msg = 'Incorrect password'
             return msg
     else:# found_comment가 없다면?
-        msg = 'Wrong approach'
-        return msg
-
+         msg = 'Wrong approach'
+         return msg
 
 
 
