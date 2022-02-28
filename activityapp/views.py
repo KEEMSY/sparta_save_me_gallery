@@ -6,7 +6,7 @@ from django.shortcuts import redirect, render
 # Create your views here.
 from activityapp.models import Activity, Info
 from activityapp.services.activity_service import (create_activity,
-                                                   get_activity_page_load, load_activity)
+                                                   get_activity_page_load, load_activity, delete_activity)
 
 
 # 페이지에는 최신의 6개의 activity가 보여짐
@@ -15,8 +15,15 @@ def home(request):
         return render(
             request, "index.html", {"activities": get_activity_page_load(1)}
         )
+    # 삭제하는 경우
     else:
-        return JsonResponse({"activities": get_activity_page_load(1)})
+        # 삭제하는 함수
+        msg = delete_activity(request.POST['id'])
+        if msg['msg'] == "success":
+            return JsonResponse({'msg': 'Successfully deleted!'})
+        # 이 후 home으로 재연결 해야함
+        else:
+            return JsonResponse({'msg': 'Passwords do not match!'})
 
 
 # info페이지
@@ -46,14 +53,13 @@ def b_choice_activity_page(request):
 
 # 이미지를 저장
 def save_made_img(request):
-    jsonObject = json.loads(request.body.decode('utf-8'))
-    if jsonObject.get("intenstion") == "yes":
+    if request.POST.get("intenstion") == "yes":
         create_activity(
-            jsonObject.get("model_name"),
-            jsonObject.get("name"),
-            jsonObject.get("pwd"),
-            jsonObject.get("image_URL")
+            request.POST.get("model_name"),
+            request.POST.get("name"),
+            request.POST.get("pwd"),
+            request.POST.get("image_URL")
         )
         return JsonResponse({"msg": "Your own masterpiece is successfully saved!"})
     else:
-        return redirect("activityapp:choice")
+        return JsonResponse({"msg": "Cool!"})
