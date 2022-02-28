@@ -57,13 +57,13 @@ def b_choice_activity_page(request):
 # 이미지를 저장
 @csrf_exempt
 def save_made_img(request):
-    if request.POST.get("intenstion") == "yes":
-        create_activity(
-            request.POST.get("model_name"),
-            request.POST.get("name"),
-            request.POST.get("pwd"),
-            request.POST.get("image_URL")
-        )
+    if 'success' == create_activity(
+        request.POST.get("model_name"),
+        request.POST.get("name"),
+        request.POST.get("pwd"),
+        request.POST.get("image_URL")
+    ):
         return JsonResponse({"msg": "Your own masterpiece is successfully saved!"})
     else:
-        return JsonResponse({"msg": "Cool!"})
+        return JsonResponse({'msg': 'Please check the blank'})
+
