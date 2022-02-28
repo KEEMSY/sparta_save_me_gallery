@@ -16,14 +16,15 @@ def comment_page(request):
         username = request.POST['username']
         password = request.POST['password']
         comment = request.POST['comment']
-        add_comment(username, password, comment)
-        return JsonResponse({'msg': 'Successfully Saved!'})
+        msg = add_comment(username, password, comment)
+        return JsonResponse({'msg': msg})
 
 @csrf_exempt
 def delete(request):
+    username = request.POST['username']
     password = request.POST['password']
     id = request.POST['id']
-    msg = delete_comment(password, id)
+    msg = delete_comment(username, password, id)
     return JsonResponse({ 'msg' : msg })
 
 
