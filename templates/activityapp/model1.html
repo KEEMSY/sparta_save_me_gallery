@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/model1.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <p class="introduce">Try applying the styles of different eras!</p>
+    <div class="example_how_convert_box">
+        <div class="example_img "></div>
+        <i class="fa-solid fa-arrow-right-long fa-5x allow"></i>
+        <div class="example_result_img_box">
+            <div class="example_result_img_box_row example_left_row_1">
+                <div class="example_result_img example_la_muse" id="la_muse" onmouseover="appear(this.id)"
+                     onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">la_muse</div>
+                </div>
+                <div class="example_result_img example_composition" id="composition" onmouseover="appear(this.id)"
+                     onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">composition</div>
+                </div>
+                <div class="example_result_img example_starry_night" id="starry_night" onmouseover="appear(this.id)"
+                     onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">starry_night</div>
+                </div>
+            </div>
+            <div class="example_result_img_box_row example_left_row_2">
+                <div class="example_result_img example_the_wave" id="the_wave" onmouseover="appear(this.id)"
+                     onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">the_wave</div>
+                </div>
+
+                <div class="example_result_img example_candy" id="candy" onmouseover="appear(this.id)" onmouseenter=""
+                     onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">candy</div>
+                </div>
+
+                <div class="example_result_img example_feathers" id="feathers" onmouseover="appear(this.id)"
+                     onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">feathers</div>
+                </div>
+
+            </div>
+            <div class="example_result_img_box_row example_left_row_3">
+                <div class="example_result_img example_mosaic" id="mosaic" onmouseover="appear(this.id)" onmouseenter=""
+                     onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">mosaic</div>
+                </div>
+                <div class="example_result_img example_the_scream" id="the_scream" onmouseover="appear(this.id)"
+                     onmouseenter="" onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">the_scream</div>
+                </div>
+                <div class="example_result_img example_udnie" id="udnie" onmouseover="appear(this.id)" onmouseenter=""
+                     onmouseleave="disappear(this.id)">
+                    <div class="example_result_modal" style="display: none">udnie</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="try_button" onclick="move_to_upload()">let me try too</button>
+    <p class="upload_title">Upload your photo!</p>
+    <p class="sub_title">TEAM PROJECT 9</p>
+    <div class="uploaded_image" id="preview_image"></div>
+    <input type="file" style="display: none" id="upload_file" onchange="upload_image()">
+    <label for="upload_file" class="upload_button">Click here!</label>
+    <p class="select_title">Select Style!</p>
+
+    <div class="select_box swiper">
+        <div class="swiper-wrapper">
+            {% for model in all_kind_of_activities %}
+                <div class="swiper-slide ">
+                    <div class="select_content">
+                        <img src="{{ model.model_img }}">
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <div class="select_style_name_box">
+        {% for model in all_kind_of_activities %}
+            <div class="select_style_name" id="style_{{ forloop.counter0 }}" onclick="test({{ forloop.counter0 }})">
+                {{ model.model_name }}
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <button type="button" class="convert_button" onclick="covert_img()">Convert!</button>
+    <p class="result_title">Check Style Transfer your Image!!</p>
+    <div class="result_box">
+        <div class="result_img" >
+            <img id="result_img" src="/">
+        </div>
+        <div class="result_info">
+            <p class="result_info_desc">This image is an image created by AI </p>
+            <p class="result_info_desc">using <u id="painter"></u></p>
+            <div class="result_info_desc result_style_emphasis" id="painting"></div>
+            <p class="result_info_desc">painting style.</p>
+            <p class="result_save_title">Can we use it?</p>
+            <div class="">
+
+            </div>
+            <div class="radio_box">
+                <div class="radio_outline" onclick="open_save_box()">
+                    <div class="radio_fill" style="display: none"></div>
+                </div>
+                <p class="radio_value" >Yes</p>
+            </div>
+            <div class="radio_box">
+                <div class="radio_outline" onclick="close_save_box()">
+                    <div class="radio_fill" style="display: block"></div>
+                </div>
+                <p class="radio_value">No</p>
+            </div>
+            <div class="save_box" id="save_box"  style="display: none">
+                <p>Please fill in the information below!</p>
+                <div class="save_input_row">
+                    <p>Title</p>
+                    <input type="text" id="name">
+                </div>
+                <div class="save_input_row">
+                    <p>Password</p>
+                    <input type="password" id="password">
+                </div>
+                <button class="save_input_button" onclick="save_result_img()">Save!</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/model1.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+{% endblock %}

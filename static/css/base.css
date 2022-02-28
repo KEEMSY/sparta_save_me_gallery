@@ -36,16 +36,30 @@
     width: 160px;
 }
 .nav_masterpiece, .nav_activities, .nav_comments, .nav_info {
+    position: relative;
     height : 80px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #AAA7A7;
     font-family: 'Roboto', sans-serif;
+    text-decoration : none;
 }
 
+.under_bar{
+    position: absolute;
+    width: 0;
+    left: 0px;
+    top: 60px;
+    height: 0;
+    border-top: solid 2px #390D0D;
+}
 
+.nav_context_box a:hover{
+    color: #390D0D;
+    transform: scale(1.1);
+}
 
 /* footer 관련 */
 
