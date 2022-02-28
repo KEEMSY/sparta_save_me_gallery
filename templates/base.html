@@ -11,28 +11,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <script src="https://kit.fontawesome.com/97ea407338.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+
     {% block head %}
     {% endblock %}
 </head>
 <body>
+<div class="under_bar" id="under_bar"></div>
 <div id="navbar">
     <div class="logo"></div>
     <div class="nav_context_box">
-        <a class="column_1 nav_masterpiece">
+
+        <a class="column_1 nav_masterpiece" href="/">
             <p>Masterpiece</p>
+
         </a>
-        <a class="column_1 nav_activities">
+        <a class="column_1 nav_activities" href="/activities/">
             <p>Activities</p>
         </a>
-        <a class="column_1 nav_comments">
+        <a class="column_1 nav_comments" href="/comments/">
             <p>Comments</p>
         </a>
-        <a class="column_1 nav_info">
+        <a class="column_1 nav_info" href="/info">
             <p>Info</p>
         </a>
     </div>
+
 </div>
 {% block content %}
 {% endblock %}
@@ -57,7 +64,10 @@
     </div>
 </div>
 
+<script src="/static/js/base.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 {% block script %}
+
 {% endblock %}
 </body>
 </html>
