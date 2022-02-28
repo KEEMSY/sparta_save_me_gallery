@@ -73,6 +73,7 @@ function close_delete_comment_box(){
 }
 
 function delete_comment(){
+    let username = document.getElementById('check_comment_name').value
     let password = document.getElementById('check_comment_password').value
     let target_id = document.getElementById('delete_target').innerText
     let comment = document.getElementById('comment_content_' + target_id).innerText
@@ -82,6 +83,7 @@ function delete_comment(){
         type: 'POST',
         url: '/comments/delete/',
         data: {
+            'username': username,
             'password': password,
             'id': target_id,
         },
