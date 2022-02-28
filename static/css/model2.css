@@ -1,0 +1,422 @@
+.introduce{
+    font-family: 'Alegreya', serif;
+    font-size: 60px;
+    margin-top: 100px;
+    margin-left: 13.8%;
+}
+
+.example_how_convert_box{
+    margin-top: 150px;
+    width : 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.example_img{
+    width : 200px;
+    height : 280px;
+    background-image: url("/static/img/example_img/Mona_Lisa.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.allow{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.example_result_img_box{
+    position: relative;
+    height:100%;
+    font-family: 'Alegreya', sans-serif;
+
+}
+
+.example_result_img_box_row{
+    width : 640px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+
+}
+
+.example_left_row_1{
+
+    position: static;
+    left: 60px;
+    top: 50px;
+}
+
+.example_left_row_2{
+    position: relative;
+     left: 60px;
+    top: -50px;
+
+}
+.example_left_row_3{
+    position: relative;
+    left: 120px;
+    top : -100px;
+}
+
+.example_result_img{
+    position: relative;
+    width : 200px;
+    height: 200px;
+    background-color: #AAA7A7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+
+/* 각 이미지 URL  */
+
+.example_la_muse{
+    background-image: url("/static/img/example_img/2022-02-25+11_35_25_Mona_lisa(la_muse).png");
+}
+.example_composition{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_20_Mona_lisa(composition).png");
+}
+.example_starry_night{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_26_Mona_lisa(starry_night).png");
+}
+.example_the_wave{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_33_Mona_lisa(the_wave).png");
+}
+.example_candy{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_37_Mona_lisa(candy).png");
+}
+.example_feathers{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_40_Mona_lisa(feathers).png");
+}
+.example_mosaic{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_45_Mona_lisa(mosaic).png");
+}
+.example_the_scream{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_49_Mona_lisa(the_scream).png");
+}
+.example_udnie{
+    background-image: url("/static/img/example_img/2022-02-25+11_36_52_Mona_lisa(udnie).png");
+}
+
+.example_result_img:hover{
+    background-color: #390D0D;
+
+}
+
+.example_result_modal{
+    width :200px;
+    height: 200px;
+    background-color: rgb(80,80,80,0.5);
+    position: absolute;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size: 20px;
+
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+.try_button{
+    width: 380px;
+    height: 60px;
+    color: #390D0D;
+    font-family: 'Alegreya', serif;
+    font-size: 40px;
+    border: 3px solid #390D0D;
+    background-color: white;
+    margin: 100px auto;
+    display: block;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+
+.try_button:hover{
+    background-color: #390D0D;
+    color: white;
+}
+
+.upload_title{
+    width: 450px;
+    font-size: 60px;
+    font-family: 'Alegreya', serif;
+    margin: 350px auto 0;
+    alignment: center;
+    color:#390D0D;
+}
+
+.sub_title{
+    width: 220px;
+    font-size: 30px;
+    font-family: 'Alegreya', serif;
+    margin: 50px auto 0;
+    alignment: center;
+    color:#390D0D;
+}
+
+.uploaded_image{
+    width: 380px;
+    height : 380px;
+    background-color: #AAA7A7;
+    border-radius: 10px;
+    margin: 100px auto 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.upload_button{
+    display: block;
+    width: 160px;
+    height : 40px;
+    background-color: #390D0D;
+    border-radius: 10px;
+    margin: 50px auto 0;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.select_title{
+    width: 300px;
+    font-size: 60px;
+    font-family: 'Alegreya', serif;
+    margin: 350px auto 0;
+    alignment: center;
+    color:#390D0D;
+}
+
+.select_box{
+    width: 1460px;
+    height: 700px;
+    background-color: #AAA7A7;
+    margin: 100px auto 0;
+}
+
+
+.select_content{
+    width : 400px;
+    height: 400px;
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    alignment: center;
+}
+
+
+.swiper-button-next, .swiper-button-prev{
+    color:#390D0D;
+}
+
+.select_style_name_box{
+
+    position: relative;
+    width: 1200px;
+    height: 30px;
+    top: -100px;
+    left: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    font-family: 'Alegreya', sans-serif;
+    z-index: 3;
+}
+
+select_style_name{
+    cursor: pointer;
+    color: #390D0D;
+}
+
+.select_style_name:hover{
+
+    color: white;
+}
+
+
+.convert_button{
+    display: block;
+    width: 380px;
+    height : 60px;
+    background-color: white;
+    border: 3px solid #390D0D;
+    border-radius: 30px;
+    margin: 100px auto 0;
+    color:#390D0D;
+    font-family: 'Alegreya', sans-serif;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.convert_button:hover{
+    background-color: #390D0D;
+    color: white;
+}
+
+.result_title{
+    width: 830px;
+    font-size: 60px;
+    font-family: 'Alegreya', serif;
+    margin: 220px auto 0;
+    alignment: center;
+    color:#390D0D;
+}
+
+.result_box{
+    margin: 150px auto 300px;
+    width : 1160px;
+    display: flex;
+    flex-direction: row;
+    alignment: center;
+    justify-content: space-between;
+}
+
+.result_img{
+    width: 600px;
+    height: 700px;
+    object-position: center;
+    object-fit: fill;
+    background-color: white;
+
+
+}
+.result_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.result_info{
+    margin: 100px 0 0 120px;
+    height: 450px;
+}
+
+.result_info_desc{
+    color: #390D0D;
+    font-family: 'Alegreya', serif;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.result_style_emphasis{
+    width: 160px;
+    color: white;
+    font-size: 30px;
+    background-color: #390D0D;
+    height:40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    alignment: center;
+}
+.result_save_title{
+    margin-top: 120px;
+    font-size: 20px;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.radio_box{
+    margin-top: 30px;
+    width : 65px;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.radio_outline{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #390D0D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio_fill{
+    width: 14px;
+    height: 14px;
+    background-color: #390D0D;
+}
+.radio_value{
+    font-family: 'Alegreya', sans-serif;
+    font-size: 20px;
+    color: #390D0D;
+}
+
+.save_box{
+    position: relative;
+    left: 160px;
+    top: -120px;
+    width : 400px;
+    height: 150px;
+    background-color: white;
+    border: 2px solid #390D0D;
+    font-family: 'Alegreya', sans-serif;
+}
+
+.save_box p{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+
+.save_input_row{
+    margin-top: 20px;
+    width : 280px;
+    height: 20px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.save_input_row input{
+
+    width : 160px;
+    height: 18px;
+    background-color: #E4E4E4;
+    border: 1px solid #390D0D;
+}
+
+.save_input_button{
+    position: relative;
+    left : 300px;
+    top : -55px;
+    width: 76px;
+    height: 56px;
+    background-color: #390D0D;
+    color:white;
+
+}

@@ -49,12 +49,11 @@
 
 .under_bar{
     position: absolute;
-    width: 120px;
-    left: 20px;
+    width: 0;
+    left: 0px;
     top: 60px;
     height: 0;
     border-top: solid 2px #390D0D;
-
 }
 
 .nav_context_box a:hover{

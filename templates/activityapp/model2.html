@@ -1,10 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/model2.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <p class="introduce">Change the photos you want to the style you want to create!</p>
+    <div class="example_how_convert_box">
+        <div class="example_img "></div>
+        <i class="fa-solid fa-arrow-right-long fa-5x allow"></i>
+        <div class=""></div>
+    </div>
+    <button type="button" class="try_button" onclick="">let me try too</button>
+    <p class="upload_title">Upload your photo!</p>
+    <p class="sub_title">select base photo</p>
+    <div class="uploaded_image" id="preview_image"></div>
+    <input type="file" style="display: none" id="upload_file" onchange="">
+    <label for="upload_file" class="upload_button">Click here!</label>
+
+    <p class="upload_title">Upload your photo!</p>
+    <p class="sub_title">select photo by style</p>
+    <div class="uploaded_image" id="preview_image"></div>
+    <input type="file" style="display: none" id="upload_file" onchange="">
+    <label for="upload_file" class="upload_button">Click here!</label>
+
+    <button type="button" class="convert_button" onclick="covert_img()">Convert!</button>
+    <p class="result_title">Check Style Transfer your Image!!</p>
+    <div class="result_box">
+        <div class="result_img" >
+            <img id="result_img" src="/">
+        </div>
+        <div class="result_info">
+            <p class="result_info_desc"></p>
+            <p class="result_info_desc">original image <u id="painter"></u></p>
+            <div class="result_info_desc result_style_emphasis" id="painting">style image</div>
+            <p class="result_info_desc">done!</p>
+            <p class="result_save_title">Can we use it?</p>
+            <div class="">
+
+            </div>
+            <div class="radio_box">
+                <div class="radio_outline" onclick="">
+                    <div class="radio_fill" style="display: none"></div>
+                </div>
+                <p class="radio_value" >Yes</p>
+            </div>
+            <div class="radio_box">
+                <div class="radio_outline" onclick="">
+                    <div class="radio_fill" style="display: block"></div>
+                </div>
+                <p class="radio_value">No</p>
+            </div>
+            <div class="save_box" id="save_box"  style="display: none">
+                <p>Please fill in the information below!</p>
+                <div class="save_input_row">
+                    <p>Title</p>
+                    <input type="text" id="name">
+                </div>
+                <div class="save_input_row">
+                    <p>Password</p>
+                    <input type="password" id="password">
+                </div>
+                <button class="save_input_button" onclick="">Save!</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/model2.js"></script>
+{% endblock %}

@@ -9,11 +9,30 @@
 
 {% block content %}
     <div class="wrapper">
-        <p class="title">Activites</p>
-        <div class="preview_box"></div>
+        <p class="title">Activities</p>
+        <div class="preview_box swiper">
+            <div class="swiper-wrapper">
+                {% for activities_row in all_activities %}
+                    <div class="swiper-slide preview_model">
+                        {% for model in activities_row %}
+                            <div class="model_img_box">
+                                <img src="{{ model.img }}">
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next preview_allow"></div>
+            <div class="swiper-button-prev preview_allow"></div>
+
+        </div>
         <div class="choice_row">
             <a href="/activities/choice/1" class="choice"></a>
             <a href="/activities/choice/2" class="choice"></a>
         </div>
     </div>
+{% endblock %}
+
+{% block script %}
+    <script src="/static/js/choice.js"></script>
 {% endblock %}

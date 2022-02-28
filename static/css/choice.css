@@ -18,6 +18,30 @@
 
 }
 
+.preview_allow{
+    color: #390D0D;
+}
+
+.preview_model{
+    top: 50px;
+    width : 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    justify-content: center;
+}
+
+.model_img_box{
+    margin-right: 100px;
+}
+
+.model_img_box img{
+
+    width : 100%;
+    height: 100%;
+}
+
 .choice_row{
     width: 100%;
     height: 600px;
@@ -30,7 +54,8 @@
 
 
 .choice{
-    width: 500px;
+    width: 700px;
     height: 500px;
     background-color: #AAA7A7;
 }
+
