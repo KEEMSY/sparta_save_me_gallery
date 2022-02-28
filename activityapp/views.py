@@ -4,12 +4,15 @@ from django.http import JsonResponse
 from django.shortcuts import redirect, render
 
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
+
 from activityapp.models import Activity, Info
 from activityapp.services.activity_service import (create_activity,
                                                    get_activity_page_load, load_activity, delete_activity)
 
 
 # 페이지에는 최신의 6개의 activity가 보여짐
+@csrf_exempt
 def home(request):
     if request.method == "GET":
         return render(
@@ -52,14 +55,15 @@ def b_choice_activity_page(request):
 
 
 # 이미지를 저장
+@csrf_exempt
 def save_made_img(request):
-    if request.POST.get("intenstion") == "yes":
-        create_activity(
-            request.POST.get("model_name"),
-            request.POST.get("name"),
-            request.POST.get("pwd"),
-            request.POST.get("image_URL")
-        )
+    if 'success' == create_activity(
+        request.POST.get("model_name"),
+        request.POST.get("name"),
+        request.POST.get("pwd"),
+        request.POST.get("image_URL")
+    ):
         return JsonResponse({"msg": "Your own masterpiece is successfully saved!"})
     else:
-        return JsonResponse({"msg": "Cool!"})
+        return JsonResponse({'msg': 'Please check the blank'})
+

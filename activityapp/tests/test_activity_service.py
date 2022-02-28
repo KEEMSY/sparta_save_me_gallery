@@ -120,3 +120,22 @@ class TestView(TestCase):
             self.assertEqual(len(load_activity(1)), 1)
         else:
             self.assertEqual(len(load_activity(1)), 1)
+
+    def test_blank_does_not_allow(self):
+        # Given
+        user1 = create_activity(1,2,3,'')
+        user2 = create_activity(1, 2, '', 4)
+        user3 = create_activity(1, '', 3, 4)
+        user4 = create_activity('', 2, 3, 4)
+        user5 = create_activity(1,2,3,4)
+
+        # Expect
+        self.assertEqual(user1, 'fail')
+        self.assertEqual(user2, 'fail')
+        self.assertEqual(user3, 'fail')
+        self.assertEqual(user4, 'fail')
+        self.assertEqual(user5, 'success')
+
+
+
+

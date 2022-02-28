@@ -11,8 +11,12 @@ def get_activity_page_load(page: int) -> Activity:
     return activity_list
 
 
-def create_activity(model_name: str, name: str, pwd: int, img: str) -> Activity:
-    return Activity.objects.create(model_name=model_name, name=name, password=pwd, img=img)
+def create_activity(model_name: str, name: str, pwd: int, img: str) -> str:
+    if model_name == '' or name == '' or pwd == '' or img == '':
+        return 'fail'
+    else:
+        Activity.objects.create(model_name=model_name, name=name, password=pwd, img=img)
+        return 'success'
 
 
 def delete_activity(pk, password) -> dict:
