@@ -56,6 +56,10 @@
     transform: scale(1.3);
 }
 
+.page_button:visited{
+    color: #390D0D;
+}
+
 .comments_box{
     position: relative;
     top: -46px;

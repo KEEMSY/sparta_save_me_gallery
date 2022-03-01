@@ -9,6 +9,7 @@ $(document).ready(function () {
             }
         }
     });
+    initial_underline()
 });
 
 function appear(id) {
@@ -47,12 +48,13 @@ function upload_image() {
     let img = document.getElementById('upload_file').files[0];
     let preview_img = document.getElementById('preview_image');
     const file_url = URL.createObjectURL(img);
+    console.log('fire_url: ',file_url)
     preview_img.style.backgroundImage = `url(${file_url})`
     preview_img.style.backgroundColor = 'white'
     setTimeout(function () {
         // scroll_to(2464)
         window.scrollTo(0, 2464)
-    }, 2000);
+    }, 1000);
 
     // console.log(img)
     // console.log(file_url)
@@ -141,8 +143,6 @@ function covert_img() {
 
     document.getElementById('result_img').src = 'https://i.pinimg.com/564x/b2/6b/5b/b26b5b036985b8d5b08c4e2d07fcbf04.jpg'
 
-    let painter_div = document.getElementById('painter')
-    painter_div.innerText = 'test'
     let painting_div = document.getElementById('painting')
     painting_div.innerText = model_type
     window.scrollTo(0, 3764)
@@ -175,23 +175,30 @@ function save_result_img() {
     let model_name = document.getElementById('painting').innerText
     let mage_URL = document.getElementById('result_img').src
 
+
+
+    console.log('name', name)
+    console.log('password', pwd)
+    console.log('model_type', model_name)
+    console.log('result_img', mage_URL)
+
+
     $.ajax({
         type: 'post',
         url: '/activities/image/',
         data: {
             'intention': '',
             'name':name,
-            'pwd': pwd,
+            'password': pwd,
             'model_name': model_name,
             'made_image': mage_URL
         },
         success: function(response){
+            alert('saved!')
             console.log(response['msg'])
         }
     })
 
-    console.log('name', name)
-    console.log('password', password)
-    console.log('model_type', model_type)
-    console.log('result_img', result_img)
+
+    close_save_box()
 }

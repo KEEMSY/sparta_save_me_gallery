@@ -4,7 +4,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-        <script src="/static/js/home.js"></script>
+    <script src="/static/js/home.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -21,31 +21,116 @@
     </p>
     <div class="content_box">
         <div class="content_box_wrapper">
-            <div class="content_col first_col" >
-                {% for comment in activities %}
+            <div class="content_col first_col">
+                {% for content in activities %}
                     {% if forloop.counter0|divisibleby:2 %}
-                    <div class="content" id="{{ comment.id }}" style="background-image: url('{{ comment.img }}')">
-                    <div class="modal_check"></div>
-                    <div  class="checker" id="checker_{{ comment.id }}" onmouseover="appear_delete_button(this.id)" onmouseleave="disappear_delete_button(this.id)"></div>
-                    <div class="delete_button" id="delete_{{ comment.id }}">
-                        <i class="fa-solid fa-x fa-2x"></i>
-                    </div>
-                </div>
-                    {% endif%}
+                        <div class="content" id="{{ content.id }}" style="background-image: url('{{ content.img }}')">
+                            <div class="modal_check"></div>
+                            <div class="checker" id="checker_{{ content.id }}"
+                                 onmouseover="appear_delete_button(this.id)"></div>
+                            <div class="delete_button_box" id="delete_{{ content.id }}"
+                                 onmouseleave="disappear_delete_button(this.id)">
+                                <div class="delete_button_box_row">
+                                    <i class="fa-solid fa-circle red_button"
+                                       onclick="delete_option({{ content.id }})"></i>
+                                    <i class="fa-solid fa-circle yellow_button"
+                                       onclick="info_option({{ content.id }})"></i>
+                                    <i class="fa-solid fa-circle green_button"
+                                       onclick="green_option({{ content.id }})"></i>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="delete_check_box_{{ content.id }}"
+                                 style="display: none">
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>Password</p>
+                                        <input type="password" id="home_password_{{ content.id }}"
+                                               class="check_user_name_in_home">
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <button id="close_delete_button"
+                                                onclick="close_delete_option({{ content.id }})">Close
+                                        </button>
+                                        <button id="delete_content_button"
+                                                onclick="delete_masterpiece_final({{ content.id }})">
+                                            Delete!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="info_home_{{ content.id }}"
+                                 style="display: none;">
+
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>model type: </p>
+                                        <p>{{ content.model_name }}</p>
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <p>Made by</p>
+                                        <p>{{ content.name }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endif %}
                 {% endfor %}
             </div>
             <div class="content_col second_col">
-                {% for comment in activities %}
+                {% for content in activities %}
                     {% if forloop.counter0|divisibleby:2 %}
                     {% else %}
-                    <div class="content" id="{{ comment.id }}" style="background-image: url('{{ comment.img }}')">
-                    <div class="modal_check"></div>
-                    <div  class="checker" id="checker_{{ comment.id }}" onmouseenter="appear_delete_button(this.id)" onmouseleave="disappear_delete_button(this.id)"></div>
-                    <div class="delete_button" id="delete_{{ comment.id }}">
-                        <i class="fa-solid fa-x fa-2x"></i>
-                    </div>
-                </div>
-                    {% endif%}
+                        <div class="content" id="{{ content.id }}" style="background-image: url('{{ content.img }}')">
+                            <div class="modal_check"></div>
+                            <div class="checker" id="checker_{{ content.id }}"
+                                 onmouseover="appear_delete_button(this.id)"></div>
+                            <div class="delete_button_box" id="delete_{{ content.id }}"
+                                 onmouseleave="disappear_delete_button(this.id)">
+                                <div class="delete_button_box_row">
+                                    <i class="fa-solid fa-circle red_button"
+                                       onclick="delete_option({{ content.id }})"></i>
+                                    <i class="fa-solid fa-circle yellow_button"
+                                       onclick="info_option({{ content.id }})"></i>
+                                    <i class="fa-solid fa-circle green_button"
+                                       onclick="green_option({{ content.id }})"></i>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="delete_check_box_{{ content.id }}"
+                                 style="display: none">
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>Password</p>
+                                        <input type="password" id="home_password_{{ content.id }}"
+                                               class="check_user_name_in_home">
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <button id="close_delete_button"
+                                                onclick="close_delete_option({{ content.id }})">Close
+                                        </button>
+                                        <button id="delete_content_button"
+                                                onclick="delete_masterpiece_final({{ content.id }})">
+                                            Delete!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="info_home_{{ content.id }}"
+                                 style="display: none;">
+
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>model type: </p>
+                                        <p>{{ content.model_name }}</p>
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <p>Made by</p>
+                                        <p>{{ content.name }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

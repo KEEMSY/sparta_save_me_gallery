@@ -43,11 +43,11 @@
         <button class="write_button" onclick="open_write_box()">Write Comment!</button>
         <div class="comment_container">
             {% if comments.has_previous %}
-                <a href="?page={{ comments.previous_page_number }}">
+                <a class="page_button" href="?page={{ comments.previous_page_number }}">
                     <i class="fa-solid fa-angle-left fa-5x comment_allow"></i>
                 </a>
             {% else %}
-                <a href="">
+                <a class="page_button" href="">
                     <i class="fa-solid fa-angle-left fa-5x comment_allow"></i>
                 </a>
             {% endif %}
@@ -70,11 +70,11 @@
                 {% endfor %}
             </div>
         {% if comments.has_next %}
-            <a href="?page={{ comments.next_page_number }}">
+            <a class="page_button" href="?page={{ comments.next_page_number }}">
                 <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
             </a>
             {% else %}
-            <a href="">
+            <a class="page_button" href="">
                 <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
             </a>
         {% endif %}
