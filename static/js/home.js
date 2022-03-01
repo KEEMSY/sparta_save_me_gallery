@@ -48,11 +48,12 @@ function delete_option(id){
     let box_id = 'delete_check_box_' + id
     let target =   document.getElementById(box_id).style.display
     if(target ==='block'){
-         document.getElementById(box_id).style.display='none'
+        document.getElementById(box_id).style.display='none'
     }
     else{
         document.getElementById(box_id).style.display='block'
         document.getElementById('info_home_'+id).style.display = 'none'
+
     }
 
 }
@@ -82,7 +83,7 @@ function delete_masterpiece_final(id){
 
     close_delete_option(id)
     password_tag.value = ''
-    // window.location.reload();
+    window.location.reload();
 }
 
 function info_option(id){

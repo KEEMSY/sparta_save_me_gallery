@@ -151,4 +151,7 @@ function save_result_custom_img() {
             console.log(response['msg'])
         }
     })
+
+    model_2_close_save_box()
+    window.location.reload();
 }

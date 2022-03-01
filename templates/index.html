@@ -88,9 +88,45 @@
                             <div class="delete_button_box" id="delete_{{ content.id }}"
                                  onmouseleave="disappear_delete_button(this.id)">
                                 <div class="delete_button_box_row">
-                                    <i class="fa-solid fa-circle red_button" onclick="delete_masterpiece()"></i>
-                                    <i class="fa-solid fa-circle yellow_button" onclick="info_masterpiece()"></i>
-                                    <i class="fa-solid fa-circle green_button" onclick="green_masterpiece()"></i>
+                                    <i class="fa-solid fa-circle red_button"
+                                       onclick="delete_option({{ content.id }})"></i>
+                                    <i class="fa-solid fa-circle yellow_button"
+                                       onclick="info_option({{ content.id }})"></i>
+                                    <i class="fa-solid fa-circle green_button"
+                                       onclick="green_option({{ content.id }})"></i>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="delete_check_box_{{ content.id }}"
+                                 style="display: none">
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>Password</p>
+                                        <input type="password" id="home_password_{{ content.id }}"
+                                               class="check_user_name_in_home">
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <button id="close_delete_button"
+                                                onclick="close_delete_option({{ content.id }})">Close
+                                        </button>
+                                        <button id="delete_content_button"
+                                                onclick="delete_masterpiece_final({{ content.id }})">
+                                            Delete!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="info_home_{{ content.id }}"
+                                 style="display: none;">
+
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>model type: </p>
+                                        <p>{{ content.model_name }}</p>
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <p>Made by</p>
+                                        <p>{{ content.name }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
