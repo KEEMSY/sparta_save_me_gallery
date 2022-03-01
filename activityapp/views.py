@@ -21,7 +21,7 @@ def home(request):
     # 삭제하는 경우
     else:
         # 삭제하는 함수
-        msg = delete_activity(request.POST['id'])
+        msg = delete_activity(request.POST['id'], request.POST['password'])
         if msg['msg'] == "success":
             return JsonResponse({'msg': 'Successfully deleted!'})
         # 이 후 home으로 재연결 해야함
