@@ -9,6 +9,7 @@ $(document).ready(function () {
             }
         }
     });
+    initial_underline()
 });
 
 // window.addEventListener('scroll', function () {
@@ -143,7 +144,7 @@ function save_result_custom_img() {
         data: {
             'name':name,
             'pwd': pwd,
-            'model_name': model_name,
+            'model_name': 'others',
             'made_image': mage_URL
         },
         success: function(response){

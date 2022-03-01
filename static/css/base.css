@@ -57,6 +57,24 @@
     border-radius: 2px;
 }
 
+@keyframes underline_appear {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes underline_disappear {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 .nav_context_box a:hover{
     color: #390D0D;
     transform: scale(1.1);

@@ -80,30 +80,36 @@
     }
 }
 
+@keyframes slide_down {
+    from{
+        opacity: 1;
+        top:0;
+    }
+    to{
+
+        opacity: 0;
+        top: 500px;
+    }
+}
+
 .checker{
     position: absolute;
     width: 600px;
-    height: 40px;
+    height: 80px;
     background-color: aqua;
     opacity: 0;
     z-index: 2;
 }
 
-.delete_button{
+.delete_button_box{
     position: absolute;
-    width: 40px;
-    height:40px;
-    background-color: #ab0808;
-    left: 560px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    color: #390D0D;
-    cursor: pointer;
+    width: 100%;
+    height:50%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(32,32,36,1) 0%, rgba(255,255,255,0) 100%);
+    left: 0;
     z-index: 1;
     opacity: 0;
-
 }
 
 @keyframes appear {
@@ -123,6 +129,96 @@
         opacity: 0;
     }
 }
+
+
+.delete_button_box_row{
+    margin-left: 20px;
+    width: 70px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 4;
+
+}
+
+.delete_button_box_row i{
+    cursor: pointer;
+
+}
+
+.red_button{
+    color: #ED6A5E;
+
+}
+
+.yellow_button{
+    color: #F4BF4F;
+}
+
+.green_button{
+    color: #61C554;
+}
+
+
+.delete_button_on_check_box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.5)
+}
+
+.delete_button_on_check_box_wrapper{
+    margin-top: 300px;
+}
+
+
+.check_user_in_home_row{
+    margin: 30px auto 0;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 600;
+}
+.check_user_name_in_home{
+    z-index: 6;
+    padding-left: 5px;
+    outline: none;
+    height: 30px;
+    font-size: 18px;
+    width: 150px;
+}
+
+#delete_content_button{
+    margin-left: 190px;
+    width: 180px;
+    height: 30px;
+    background-color: #390D0D;
+    color: white;
+    font-size: 20px;
+    z-index: 6;
+    cursor: pointer;
+
+}
+
+#close_delete_button{
+    width: 180px;
+    height: 30px;
+    background-color: #390D0D;
+    color: white;
+    font-size: 20px;
+    z-index: 6;
+    cursor: pointer;
+}
+
+
 
 .first_content{
     margin-top: 0;

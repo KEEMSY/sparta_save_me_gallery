@@ -9,6 +9,7 @@ $(document).ready(function () {
             }
         }
     });
+    initial_underline()
 });
 
 function appear(id) {
@@ -53,7 +54,7 @@ function upload_image() {
     setTimeout(function () {
         // scroll_to(2464)
         window.scrollTo(0, 2464)
-    }, 2000);
+    }, 1000);
 
     // console.log(img)
     // console.log(file_url)
@@ -188,14 +189,16 @@ function save_result_img() {
         data: {
             'intention': '',
             'name':name,
-            'pwd': pwd,
+            'password': pwd,
             'model_name': model_name,
             'made_image': mage_URL
         },
         success: function(response){
+            alert('saved!')
             console.log(response['msg'])
         }
     })
 
 
+    close_save_box()
 }
