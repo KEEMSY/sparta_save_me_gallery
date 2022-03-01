@@ -66,6 +66,8 @@ function close_delete_option(id){
 function delete_masterpiece_final(id){
     let password_tag = document.getElementById('home_password_'+ id)
     let password = password_tag.value
+
+    console.log('delete id is : ' ,id)
     $.ajax({
         type: 'POST',
         url: '/',

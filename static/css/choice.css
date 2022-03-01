@@ -71,7 +71,6 @@
 .preview_model::-webkit-scrollbar-track {
     background-color: gray;
     border-radius: 10px;
-
 }
 
 
@@ -142,6 +141,8 @@
 
 }
 
+
+
 .choice1_desc{
     width: 400px;
     margin: 400px auto 0 ;
@@ -151,3 +152,9 @@
 
 }
 
+.choice2{
+    background-image: url("/static/img/model2.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: contain;
+}

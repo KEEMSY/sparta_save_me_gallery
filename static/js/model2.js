@@ -130,7 +130,7 @@ function model_2_close_save_box(){
 
 function save_result_custom_img() {
     let name = document.getElementById('model2_name').value
-    let pwd = document.getElementById('model2_password').value
+    let password = document.getElementById('model2_password').value
     let mage_URL = document.getElementById('result_custom_img').src
     let model_name = 'default'
 
@@ -143,7 +143,7 @@ function save_result_custom_img() {
         url: '/activities/image/',
         data: {
             'name':name,
-            'pwd': pwd,
+            'password': password,
             'model_name': 'others',
             'made_image': mage_URL
         },
