@@ -20,6 +20,14 @@ window.addEventListener('scroll', function(){
     for(let i=0;i<3;i++){
         animation_on(i, value )
     }
+    let up_box = document.getElementById('up_button')
+    if(value >= 100){
+        up_box.style.display = 'block'
+
+    }
+    else{
+        up_box.style.display = 'none'
+    }
 
 })
 
@@ -118,3 +126,4 @@ function off_all_option(e){
     close_delete_option(e.fromElement.id)
     document.getElementById('info_home_'+e.fromElement.id).style.display = 'none'
 }
+

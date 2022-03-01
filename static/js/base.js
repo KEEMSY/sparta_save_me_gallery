@@ -38,7 +38,6 @@ menu_list.forEach((menu) =>
     menu.addEventListener('mouseout', (e) => initial_underline()))
 
 function indicator(e) {
-
     underline.style.left = e.currentTarget.offsetLeft + 15 + "px";
     underline.style.width = e.currentTarget.offsetWidth - 30 + "px";
     underline.style.top = e.currentTarget.offsetTop + e.currentTarget.offsetHeight - 20 + "px";
@@ -70,5 +69,12 @@ function draw_initial_under_line(index) {
 }
 
 
+
+
 /* 이미지 옮기기! */
 
+/* 위로 옮기기! */
+
+function move_to_top(){
+    window.scrollTo(0, 0)
+}

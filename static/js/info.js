@@ -9,6 +9,14 @@ window.addEventListener('scroll',function(){
     for(let i =0; i<develop_profile.length; i++){
         profile_animation_on(i, value)
     }
+
+    let up_box = document.getElementById('up_button')
+    if(value >= 100){
+        up_box.style.display = 'block'
+    }
+    else{
+        up_box.style.display = 'none'
+    }
 })
 
 

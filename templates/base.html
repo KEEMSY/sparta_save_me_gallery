@@ -20,11 +20,13 @@
     {% endblock %}
 </head>
 <body>
+<div class="up_button" id="up_button" style="display: none" onclick="move_to_top()">
+    <i class="fa-solid fa-circle-chevron-up fa-5x"></i>
+</div>
 <div class="under_bar" id="under_bar"></div>
 <div id="navbar">
-    <div class="logo"></div>
+    <div class="logo" onclick="window.location.href='/'"></div>
     <div class="nav_context_box">
-
         <a class="column_1 nav_masterpiece" href="/">
             <p>Masterpiece</p>
 
@@ -39,7 +41,6 @@
             <p>Info</p>
         </a>
     </div>
-
 </div>
 {% block content %}
 {% endblock %}

@@ -23,7 +23,13 @@ function move_to_upload() {
 
 window.addEventListener('scroll', function () {
     let value = window.scrollY
-    console.log(value)
+    let up_box = document.getElementById('up_button')
+    if(value >= 100){
+        up_box.style.display = 'block'
+    }
+    else{
+        up_box.style.display = 'none'
+    }
 })
 
 
@@ -71,8 +77,8 @@ function covert_custom_img(){
     }
 
 
-    let image_name = image['name']
-    let model_image_name = model_image['name']
+    let image_name = image['name'].split('.')[0]
+    let model_image_name = 'others'
 
 
     console.log('image:', image)
@@ -89,20 +95,21 @@ function covert_custom_img(){
     form_data.append("model_image", model_image)
 
     // 인공 지능 서버 연결
-    // $.ajax({
-    //     type: "POST",
-    //     url: "http://localhost:5000/api/convert/",
-    //     data: form_data,
-    //     cache: false,
-    //     contentType: false,
-    //     processData: false,
-    //     success: function (response) {
-    //         console.log(response['stylized_image_url'])
-    //         alert(response['stylized_image_url'])
-    //     }
-    // });
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:5000/api/mix/",
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            console.log(response)
+            console.log(response['mixed_img_url'])
+            document.getElementById('result_custom_img').src = response['mixed_img_url']
+        }
+    });
 
-    document.getElementById('result_custom_img').src = 'https://i.pinimg.com/564x/b2/6b/5b/b26b5b036985b8d5b08c4e2d07fcbf04.jpg'
+
 
     window.scrollTo(0, 2200)
 }
@@ -112,7 +119,6 @@ function model_2_open_save_box(){
     let radio_check = document.getElementsByClassName('model_2_radio_fill')
     radio_check[0].style.display = 'block'
     radio_check[1].style.display = 'none'
-    console.log(radio_box)
     radio_box.style.display = 'block'
 }
 
@@ -124,7 +130,6 @@ function model_2_close_save_box(){
 
     radio_check[0].style.display = 'none'
     radio_check[1].style.display = 'block'
-    console.log(radio_box)
     radio_box.style.display = 'none'
 }
 
@@ -153,5 +158,5 @@ function save_result_custom_img() {
     })
 
     model_2_close_save_box()
-    window.location.reload();
+    window.location.href='/'
 }

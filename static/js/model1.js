@@ -31,7 +31,6 @@ function disappear(id) {
 
 function move_to_upload() {
     window.scrollTo(0, 1300)
-    console.log(value)
 
     window.addEventListener('scroll', function () {
         let value = window.scrollY
@@ -41,14 +40,20 @@ function move_to_upload() {
 
 window.addEventListener('scroll', function () {
     let value = window.scrollY
-    // console.log(value)
+
+    let up_box = document.getElementById('up_button')
+    if(value >= 100){
+        up_box.style.display = 'block'
+    }
+    else{
+        up_box.style.display = 'none'
+    }
 })
 
 function upload_image() {
     let img = document.getElementById('upload_file').files[0];
     let preview_img = document.getElementById('preview_image');
     const file_url = URL.createObjectURL(img);
-    console.log('fire_url: ',file_url)
     preview_img.style.backgroundImage = `url(${file_url})`
     preview_img.style.backgroundColor = 'white'
     setTimeout(function () {
@@ -79,7 +84,7 @@ function scroll_to(target_scroll) {
 
         setTimeout(function () {
             window.scrollTo(0, current_scroll)
-            console.log(window.scrollY)
+
         }, 100);
 
     }
@@ -108,7 +113,6 @@ select_list.forEach((menu)=>
 
 
 function draw_select_style(e){
-    console.log('function in ')
     underline_2.style.left = e.currentTarget.offsetLeft + "px";
     underline_2.style.width = e.currentTarget.offsetWidth + "px";
     underline_2.style.top = 10 + e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px";
@@ -118,30 +122,29 @@ function covert_img() {
 
     let model_type = document.getElementById('style_' + swiper.realIndex).innerText
     let image = $('#upload_file')[0].files[0]
-    let image_name = image['name']
+    let image_name = image['name'].split('.')[0]
     let form_data = new FormData()
 
-    console.log('model_type', model_type)
 
     form_data.append("image_name", image_name)
     form_data.append("model_type", model_type)
     form_data.append("image", image)
 
     console.log(form_data)
-    // $.ajax({
-    //     type: "POST",
-    //     url: "http://localhost:5000/api/convert/",
-    //     data: form_data,
-    //     cache: false,
-    //     contentType: false,
-    //     processData: false,
-    //     success: function (response) {
-    //         console.log(response['stylized_image_url'])
-    //         alert(response['stylized_image_url'])
-    //     }
-    // });
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:5000/api/convert/",
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            console.log('response data : ', response)
+            console.log(response['stylized_img_url'])
+            document.getElementById('result_img').src = response['stylized_img_url']
+        }
+    });
 
-    document.getElementById('result_img').src = 'https://i.pinimg.com/564x/b2/6b/5b/b26b5b036985b8d5b08c4e2d07fcbf04.jpg'
 
     let painting_div = document.getElementById('painting')
     painting_div.innerText = model_type
@@ -165,7 +168,6 @@ function close_save_box() {
 
     radio_check[0].style.display = 'none'
     radio_check[1].style.display = 'block'
-    console.log(radio_box)
     radio_box.style.display = 'none'
 }
 
@@ -174,13 +176,6 @@ function save_result_img() {
     let pwd = document.getElementById('password').value
     let model_name = document.getElementById('painting').innerText
     let mage_URL = document.getElementById('result_img').src
-
-
-
-    console.log('name', name)
-    console.log('password', pwd)
-    console.log('model_type', model_name)
-    console.log('result_img', mage_URL)
 
 
     $.ajax({
@@ -198,7 +193,6 @@ function save_result_img() {
             console.log(response['msg'])
         }
     })
-
-
     close_save_box()
+    window.location.href='/'
 }

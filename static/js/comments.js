@@ -13,12 +13,9 @@ $(document).ready(function() {
     initial_underline()
 });
 
-
-
 function comment_check(){
     let comment_list = document.getElementsByClassName('comment_info')
     for(let i = 0; i<comment_list.length; i ++){
-
         let title = comment_list[i].children[1].innerText.split('<br/>')[0].slice(0,10)
         comment_list[i].children[0].children[0].innerText = title
         comment_list[i].children[1].innerHTML = comment_list[i].children[1].innerText
@@ -57,7 +54,7 @@ function save_comment(){
         }
     })
 
-    location.reload();
+    window.location.href='/comments/';
 }
 
 function open_delete_comment_box(id){
