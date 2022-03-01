@@ -52,8 +52,9 @@
     width: 0;
     left: 0px;
     top: 60px;
-    height: 0;
-    border-top: solid 2px #390D0D;
+    height: 4px;
+    background-color: #390D0D;
+    border-radius: 2px;
 }
 
 .nav_context_box a:hover{

@@ -60,8 +60,8 @@ def save_made_img(request):
     if 'success' == create_activity(
         request.POST.get("model_name"),
         request.POST.get("name"),
-        request.POST.get("pwd"),
-        request.POST.get("image_URL")
+        request.POST.get("password"),
+        request.POST.get("made_image")
     ):
         return JsonResponse({"msg": "Your own masterpiece is successfully saved!"})
     else:

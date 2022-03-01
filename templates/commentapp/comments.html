@@ -42,14 +42,21 @@
         <p class="comments_title">Please leave your guestbook!</p>
         <button class="write_button" onclick="open_write_box()">Write Comment!</button>
         <div class="comment_container">
-            <i class="fa-solid fa-angle-left fa-5x comment_allow"></i>
+            {% if comments.has_previous %}
+                <a href="?page={{ comments.previous_page_number }}">
+                    <i class="fa-solid fa-angle-left fa-5x comment_allow"></i>
+                </a>
+            {% else %}
+                <a href="">
+                    <i class="fa-solid fa-angle-left fa-5x comment_allow"></i>
+                </a>
+            {% endif %}
             <div class="comments_box">
                 {% for comment in comments %}
                     <div class="delete_button" id="comment_{{ comment.id }}" onclick="open_delete_comment_box(this.id)">
-                        <i class="fa-solid fa-x fa-2x "></i>
+                        <i class="fa-solid fa-x fa-2x"></i>
                     </div>
                     <div class="comment">
-
                         <div class="comment_info">
                             <p class="comment_title"><u>Please leave your guestbook!</u></p>
                             <p class="comment_content" id="comment_content_{{ comment.id }}">
@@ -61,10 +68,17 @@
                         </div>
                     </div>
                 {% endfor %}
-
-
             </div>
-            <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
+        {% if comments.has_next %}
+            <a href="?page={{ comments.next_page_number }}">
+                <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
+            </a>
+            {% else %}
+            <a href="">
+                <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
+            </a>
+        {% endif %}
+
         </div>
         <p class="page">{{ comments }}</p>
     </div>

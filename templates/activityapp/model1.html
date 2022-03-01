@@ -81,11 +81,11 @@
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-        <div class="swiper-pagination"></div>
     </div>
 
 
     <div class="select_style_name_box">
+        <div class="under_bar" id="select_style"></div>
         {% for model in all_kind_of_activities %}
             <div class="select_style_name" id="style_{{ forloop.counter0 }}" onclick="test({{ forloop.counter0 }})">
                 {{ model.model_name }}

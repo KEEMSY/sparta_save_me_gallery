@@ -24,11 +24,10 @@
             <div class="content_col first_col" >
                 {% for comment in activities %}
                     {% if forloop.counter0|divisibleby:2 %}
-
                     <div class="content" id="{{ comment.id }}" style="background-image: url('{{ comment.img }}')">
                     <div class="modal_check"></div>
-                    <div  class="checker" id="checker_1" onmouseenter="appear_delete_button(this.id)" onmouseleave="disappear_delete_button(this.id)"></div>
-                    <div class="delete_button" id="delete_1">
+                    <div  class="checker" id="checker_{{ comment.id }}" onmouseover="appear_delete_button(this.id)" onmouseleave="disappear_delete_button(this.id)"></div>
+                    <div class="delete_button" id="delete_{{ comment.id }}">
                         <i class="fa-solid fa-x fa-2x"></i>
                     </div>
                 </div>
@@ -41,8 +40,8 @@
                     {% else %}
                     <div class="content" id="{{ comment.id }}" style="background-image: url('{{ comment.img }}')">
                     <div class="modal_check"></div>
-                    <div  class="checker" id="checker_1" onmouseenter="appear_delete_button(this.id)" onmouseleave="disappear_delete_button(this.id)"></div>
-                    <div class="delete_button" id="delete_1">
+                    <div  class="checker" id="checker_{{ comment.id }}" onmouseenter="appear_delete_button(this.id)" onmouseleave="disappear_delete_button(this.id)"></div>
+                    <div class="delete_button" id="delete_{{ comment.id }}">
                         <i class="fa-solid fa-x fa-2x"></i>
                     </div>
                 </div>
@@ -55,5 +54,5 @@
 {% endblock %}
 
 {% block script %}
-
+    <script src="/static/js/home.js"></script>
 {% endblock %}

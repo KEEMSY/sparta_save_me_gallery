@@ -24,18 +24,16 @@ function csrfSafeMethod(method) {
 /* 언더바 */
 
 let underline = document.getElementById('under_bar')
-let menu_list = document.querySelectorAll('.nav_context_box a')
-console.log(underline)
-console.log(menu_list)
+let menu_list = document.querySelectorAll('div.nav_context_box a')
 
 menu_list.forEach((menu)=>
-    menu.addEventListener('mouseover ',(e)=> indicator(e)))
+    menu.addEventListener('mouseover',(e)=> indicator(e)))
 
 function indicator(e){
     console.log('event on!')
-    underline.style.left=e.currentTarget.offsetLeft +"px";
-    underline.style.width = e.currentTarget.offsetWidth = "px";
-    underline.style.top = e.currentTarget.offsetTop + e.currentTarget.offsetHeight + "px";
+    underline.style.left=e.currentTarget.offsetLeft +15 +"px";
+    underline.style.width = e.currentTarget.offsetWidth -30 + "px";
+    underline.style.top = e.currentTarget.offsetTop + e.currentTarget.offsetHeight -20 + "px";
 }
 
 /* 이미지 옮기기! */

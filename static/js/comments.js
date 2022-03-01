@@ -10,7 +10,6 @@ $(document).ready(function() {
         }
     });
     comment_check();
-
 });
 
 
@@ -73,24 +72,23 @@ function close_delete_comment_box(){
 }
 
 function delete_comment(){
-
     let username = document.getElementById('check_comment_name').value
-    let pwd = document.getElementById('check_comment_password').value
+    let password = document.getElementById('check_comment_password').value
     let target_id = document.getElementById('delete_target').innerText
     let comment = document.getElementById('comment_content_' + target_id).innerText
     comment = comment.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-    console.log(comment)
     $.ajax({
         type: 'POST',
         url: '/comments/delete/',
         data: {
             'username': username,
-            'password': pwd,
-            'comment': comment,
+            'password': password,
+            'id': target_id,
         },
         success: function(response){
             console.log(response['msg'])
         }
     })
+    location.reload();
 }
 
