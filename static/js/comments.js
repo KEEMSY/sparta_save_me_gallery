@@ -108,6 +108,7 @@ function delete_comment(){
         },
         success: function(response){
             console.log(response['msg'])
+            alert(response['msg'])
         }
     })
     location.reload();
