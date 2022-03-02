@@ -30,7 +30,8 @@ function disappear(id) {
 
 
 function move_to_upload() {
-    $('body,html').animate({scrollTop:1300},1000)
+    let target = document.getElementById('upload_file_box')
+    $('body,html').animate({scrollTop:target.offsetHeight/2+target.offsetTop-window.innerHeight/2},1000)
 }
 
 window.addEventListener('scroll', function () {
@@ -115,7 +116,8 @@ function covert_img() {
 
     let painting_div = document.getElementById('painting')
     painting_div.innerText = model_type
-    $('body,html').animate({scrollTop:2300},1000)
+    let target = document.getElementById('result_wrapper')
+    $('body,html').animate({scrollTop:target.offsetHeight/2+target.offsetTop-window.innerHeight/2},1000)
 }
 
 function open_save_box() {
