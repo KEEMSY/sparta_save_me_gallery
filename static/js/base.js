@@ -76,5 +76,6 @@ function draw_initial_under_line(index) {
 /* 위로 옮기기! */
 
 function move_to_top(){
-    window.scrollTo(0, 0)
+    $('body,html').animate({scrollTop:0},500)
+    // window.scrollTo(0, 0)
 }

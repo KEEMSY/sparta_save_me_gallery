@@ -60,6 +60,7 @@ function delete_option(id){
     }
     else{
         document.getElementById(box_id).style.display='block'
+        document.getElementById(box_id).style.animation = 'appear 1s ease-out forwards'
         document.getElementById('info_home_'+id).style.display = 'none'
 
     }
@@ -100,6 +101,7 @@ function info_option(id){
 
     if(box.style.display==='none'){
         box.style.display = 'block';
+        box.style.animation = 'appear 1s ease-out forwards'
         document.getElementById(box_id).style.display = 'none'
 
     }
