@@ -239,8 +239,8 @@
     position: relative;
     width: 1200px;
     height: 30px;
+    margin: 0 auto;
     top: -100px;
-    left: 450px;
     display: flex;
     flex-direction: row;
     align-items: center;
