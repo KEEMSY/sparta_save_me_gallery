@@ -31,9 +31,12 @@
                                  onmouseleave="disappear_delete_button(this.id)">
                                 <div class="delete_button_box_row">
                                     <i class="fa-solid fa-circle red_button"
-                                       onclick="delete_option({{ content.id }})"></i>
+                                       onclick="delete_option({{ content.id }})">
+                                    </i>
                                     <i class="fa-solid fa-circle yellow_button"
-                                       onclick="info_option({{ content.id }})"></i>
+                                       onclick="info_option({{ content.id }})">
+
+                                    </i>
                                     <i class="fa-solid fa-circle green_button"
                                        onclick="green_option({{ content.id }})"></i>
                                 </div>

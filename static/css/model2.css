@@ -54,6 +54,7 @@
 
 }
 
+
 .example_left_row_1{
 
     position: static;
@@ -76,13 +77,14 @@
 .example_result_img{
     position: relative;
     width : 200px;
-    height: 200px;
+    height: 280px;
     background-color: #AAA7A7;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: 0;
     transition: transform 0.5s ease-in-out;
+    background-image: url("/static/img/example_img/2022-03-01_21_25_25_Mona_Lisa(others).png");
 }
 
 

@@ -18,7 +18,7 @@ $(document).ready(function () {
 //     })
 
 function move_to_upload() {
-    window.scrollTo(0, 990)
+    $('body,html').animate({scrollTop:1100},1000)
 }
 
 window.addEventListener('scroll', function () {
@@ -35,13 +35,14 @@ window.addEventListener('scroll', function () {
 
 function open_tip_box(){
     let modal_box = document.getElementById('modal_tip')
+    let body = $('body,html')
     if(modal_box.style.display==='block'){
         modal_box.style.display = 'none'
-        window.scrollTo(0, 990)
+        body.animate({scrollTop:1100},500)
     }
     else{
         modal_box.style.display = 'block'
-        window.scrollTo(0, 434)
+        body.animate({scrollTop:434},500)
     }
 
 }
@@ -68,11 +69,13 @@ function covert_custom_img(){
     let image = $('#upload_origin_file')[0].files[0]
     let model_image = $('#upload_style_file')[0].files[0]
 
+    let body = $('body,html')
+
     console.log(image)
     console.log(model_image)
 
     if(image === undefined  || model_image === undefined ){
-        window.scrollTo(0, 990)
+        body.animate({scrollTop:1100},1000)
         return alert('Upload your photo!')
     }
 
@@ -91,7 +94,7 @@ function covert_custom_img(){
     // 인공 지능 서버 연결
     $.ajax({
         type: "POST",
-        url: "http://15.165.45.152:5000//api/mix/",
+        url: "http://15.165.45.152:5000/api/mix/",
         data: form_data,
         cache: false,
         contentType: false,
@@ -104,8 +107,7 @@ function covert_custom_img(){
     });
 
 
-
-    window.scrollTo(0, 2200)
+    body.animate({scrollTop:2200},1000)
 }
 
 function model_2_open_save_box(){
