@@ -81,12 +81,6 @@ function covert_custom_img(){
     let model_image_name = 'others'
 
 
-    console.log('image:', image)
-    console.log('model_image:', model_image)
-    console.log('image_name:', image_name)
-    console.log('model_image_name:', model_image_name)
-
-
     let form_data = new FormData()
 
     form_data.append("image_name", image_name)
@@ -97,7 +91,7 @@ function covert_custom_img(){
     // 인공 지능 서버 연결
     $.ajax({
         type: "POST",
-        url: "http://localhost:5000/api/mix/",
+        url: "http://15.165.45.152:5000//api/mix/",
         data: form_data,
         cache: false,
         contentType: false,
