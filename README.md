@@ -2,7 +2,7 @@
 
 <br>
 
-##소개
+## 소개
 <p style="font-size: 1.2rem;">
 9해줘갤러리는 미술관을 컨셉으로 하여,체험(유화제작서비스:AI)을 하고 
 체험한 결과물을 전시(혹은 저장:CRUD) 하고, 후기(comment:CRUD) 를 남길 수 있는 웹 서비스 이며, 이번 프로젝트에서는, 학습 내용의 복습 및 적용을 주 목적으로 정하였습니다.
@@ -12,7 +12,7 @@
 <br>
 
 
-##📁 사용한 기술
+## 📁 사용한 기술
 <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0e2fe3e0-cc58-4a1a-b340-858718d8ce47/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220302T100511Z&X-Amz-Expires=86400&X-Amz-Signature=b819acb29217ec2ba71db38a1bde47af4fb697db0c74e0c6c9d8ea63a68b20be&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject" style="width: 66rem; height: 40rem; display: block; margin: 0 auto;">
 
 - Django, Django-ninja
@@ -23,7 +23,7 @@
 - AWS: RDS, S3
 <br>
 
-##🗓 프로젝트기간
+## 🗓 프로젝트기간
 <p style="font-size: 1.1rem">
 2022년 2월22일 ~ 2022년 3월3일
 </p>
@@ -31,14 +31,14 @@
 <br>
 
 
-##🧑‍💻👩‍💻 팀구성 및 역할 👨‍💻🧑‍💻
+## 🧑‍💻👩‍💻 팀구성 및 역할 👨‍💻🧑‍💻
 ###프론트
 - 김재성님
   - 기능
   
 <br>
 
-###벡엔드 
+### 벡엔드 
 - 이가을님
     * commentapp 기능구현
     * RDS생성
@@ -52,7 +52,7 @@
   
 <br>
 
-###머신러닝
+### 머신러닝
 - 송원석님
   - API 작성
   - 이미지 변환 인공지능 서버 구축(이미지 화풍변환 기능)
