@@ -1,5 +1,3 @@
-from django.core.paginator import Page, Paginator
-
 from activityapp.models import Activity, Info
 
 
@@ -29,10 +27,11 @@ def delete_activity(pk, password) -> dict:
 
 
 # 최신순 최대 20개까지 가옴옴
-def load_activity(name):
+def load_activity(name: str) -> Activity:
     model = Activity.objects.order_by('-id').filter(model_name=name)[:20]
     return model
 
 
-def create_info(model_name: str, model_img: str, example_img: str):
-    return Info.objects.create(model_name, model_img=model_img, example_img=example_img)
+def create_info(model_name: str, model_img: str, example_img: str) -> None:
+    Info.objects.create(model_name, model_img=model_img, example_img=example_img)
+

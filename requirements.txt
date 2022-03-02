@@ -5,3 +5,4 @@ isort==5.10.1
 pymysql==1.0.2
 types-PyMySQL==1.0.6
 black==21.12b0
+django-environ
