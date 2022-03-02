@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS: List[str] = ['*']
+ALLOWED_HOSTS: List[str] = ["*"]
 
 # Application definition
 
@@ -88,13 +88,13 @@ pymysql.install_as_MySQLdb()  # 이것을 실행하면 pymysql을 사용하면�
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "TEAM9",
-        "USER": "root",
-        "PASSWORD": "password",
-        "HOST": "localhost",
-        "PORT": "3306",
-    }
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": "team9",
+            "USER": "admin",
+            "PASSWORD": "hPEc5wD8chovXKWjcwck",
+            "HOST": "team9.c79lznrngi8y.ap-northeast-2.rds.amazonaws.com",
+            "PORT": "3306",
+       }
 }
 
 # Password validation

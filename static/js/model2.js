@@ -9,6 +9,7 @@ $(document).ready(function () {
             }
         }
     });
+    initial_underline()
 });
 
 // window.addEventListener('scroll', function () {
@@ -18,13 +19,17 @@ $(document).ready(function () {
 
 function move_to_upload() {
     window.scrollTo(0, 990)
-
-
 }
 
 window.addEventListener('scroll', function () {
     let value = window.scrollY
-    // console.log(value)
+    let up_box = document.getElementById('up_button')
+    if(value >= 100){
+        up_box.style.display = 'block'
+    }
+    else{
+        up_box.style.display = 'none'
+    }
 })
 
 
@@ -60,75 +65,91 @@ function upload_style_image(){
 
 
 function covert_custom_img(){
-    let image_origin = $('#upload_origin_file')[0].files[0]
-    let image_style = $('#upload_style_file')[0].files[0]
-    let image_name = image['name']
+    let image = $('#upload_origin_file')[0].files[0]
+    let model_image = $('#upload_style_file')[0].files[0]
+
+    console.log(image)
+    console.log(model_image)
+
+    if(image === undefined  || model_image === undefined ){
+        window.scrollTo(0, 990)
+        return alert('Upload your photo!')
+    }
+
+
+    let image_name = image['name'].split('.')[0]
+    let model_image_name = 'others'
+
+
+    console.log('image:', image)
+    console.log('model_image:', model_image)
+    console.log('image_name:', image_name)
+    console.log('model_image_name:', model_image_name)
+
+
     let form_data = new FormData()
 
-    console.log('model_type', model_type)
-
     form_data.append("image_name", image_name)
-    form_data.append("model_type", model_type)
     form_data.append("image", image)
+    form_data.append("model_image_name", model_image_name)
+    form_data.append("model_image", model_image)
 
-    console.log(form_data)
-    // $.ajax({
-    //     type: "POST",
-    //     url: "http://localhost:5000/api/convert/",
-    //     data: form_data,
-    //     cache: false,
-    //     contentType: false,
-    //     processData: false,
-    //     success: function (response) {
-    //         console.log(response['stylized_image_url'])
-    //         alert(response['stylized_image_url'])
-    //     }
-    // });
+    // 인공 지능 서버 연결
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:5000/api/mix/",
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            console.log(response)
+            console.log(response['mixed_img_url'])
+            document.getElementById('result_custom_img').src = response['mixed_img_url']
+        }
+    });
 
-    document.getElementById('result_img').src = 'https://i.pinimg.com/564x/b2/6b/5b/b26b5b036985b8d5b08c4e2d07fcbf04.jpg'
 
-    let painter_div = document.getElementById('painter')
-    painter_div.innerText = 'test'
-    let painting_div = document.getElementById('painting')
-    painting_div.innerText = model_type
-    window.scrollTo(0, 3764)
+
+    window.scrollTo(0, 2200)
 }
 
-function open_save_box(){
-    let radio_box = document.getElementById('save_box')
-    let radio_check = document.getElementsByClassName('radio_fill')
+function model_2_open_save_box(){
+    let radio_box = document.getElementById('model_2_save_box')
+    let radio_check = document.getElementsByClassName('model_2_radio_fill')
     radio_check[0].style.display = 'block'
     radio_check[1].style.display = 'none'
-    console.log(radio_box)
     radio_box.style.display = 'block'
 }
 
-function close_save_box(){
-    let radio_box = document.getElementById('save_box')
-    let radio_check = document.getElementsByClassName('radio_fill')
-    document.getElementById('name').value = ''
-    document.getElementById('password').value = ''
+function model_2_close_save_box(){
+    let radio_box = document.getElementById('model_2_save_box')
+    let radio_check = document.getElementsByClassName('model_2_radio_fill')
+    document.getElementById('model2_name').value = ''
+    document.getElementById('model2_password').value = ''
 
     radio_check[0].style.display = 'none'
     radio_check[1].style.display = 'block'
-    console.log(radio_box)
     radio_box.style.display = 'none'
 }
 
-function save_result_costom_img() {
-    let name = document.getElementById('name').value
-    let pwd = document.getElementById('password').value
-    let model_name = document.getElementById('painting').innerText
-    let mage_URL = document.getElementById('result_img').src
+function save_result_custom_img() {
+    let name = document.getElementById('model2_name').value
+    let password = document.getElementById('model2_password').value
+    let mage_URL = document.getElementById('result_custom_img').src
+    let model_name = 'default'
+
+    if(mage_URL===''){
+        alert('click the Covert button!')
+    }
 
     $.ajax({
         type: 'post',
         url: '/activities/image/',
         data: {
-            'intention': '',
             'name':name,
-            'pwd': pwd,
-            'model_name': model_name,
+            'password': password,
+            'model_name': 'others',
             'made_image': mage_URL
         },
         success: function(response){
@@ -136,8 +157,6 @@ function save_result_costom_img() {
         }
     })
 
-    console.log('name', name)
-    console.log('password', pwd)
-    console.log('model_type', model_type)
-    console.log('result_img', result_img)
+    model_2_close_save_box()
+    window.location.href='/'
 }

@@ -190,8 +190,10 @@
     font-family: 'Alegreya', serif;
     margin: 50px auto 0;
     alignment: center;
+    text-align: center;
     color:#390D0D;
 }
+
 
 .tip_style{
     position: absolute;
@@ -485,7 +487,7 @@
     align-items: center;
 }
 
-.radio_fill{
+.model_2_radio_fill{
     width: 14px;
     height: 14px;
     background-color: #390D0D;
