@@ -111,7 +111,7 @@ function covert_custom_img(){
             console.log(response['mixed_img_url'])
             document.getElementById('result_custom_img').style.display = 'block'
             document.getElementById('result_custom_img').src = response['mixed_img_url']
-            document.getElementById('save_tag').href = response['mixed_img_url']
+            document.getElementById('save_tag_model2').href = response['mixed_img_url']
         }
     });
 
