@@ -23,6 +23,61 @@
             <div class="content_col first_col">
                 {% for content in activities %}
                     {% if forloop.counter0|divisibleby:2 %}
+                        {% if forloop.counter0 == 2 %}
+                            <!--영환 매니저님 고정 content-->
+                            <div class="content" id="20" style="background-image: url('https://image-style-convert-bucket.s3.ap-northeast-2.amazonaws.com/2022-02-28_16%3A42%3A30_%EA%B3%B5%EC%98%81%ED%99%98_%ED%8A%9C%ED%84%B0%EB%8B%98_%EC%82%AC%EC%A7%843(la_muse).png')">
+                            <div class="modal_check"></div>
+                            <div class="checker" id="checker_20"
+                                 onmouseover="appear_delete_button(this.id)"></div>
+                            <div class="delete_button_box" id="delete_20"
+                                 onmouseleave="disappear_delete_button(this.id)">
+                                <div class="delete_button_box_row">
+                                    <i class="fa-solid fa-circle red_button"
+                                       onclick="delete_option(20)">
+                                    </i>
+                                    <i class="fa-solid fa-circle yellow_button"
+                                       onclick="info_option(20)">
+
+                                    </i>
+                                    <i class="fa-solid fa-circle green_button"
+                                       onclick="green_option(20)"></i>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="delete_check_box_20"
+                                 style="display: none">
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>Password</p>
+                                        <input type="password" id="home_password_20"
+                                               class="check_user_name_in_home">
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <button id="close_delete_button"
+                                                onclick="close_delete_option(20)">Close
+                                        </button>
+                                        <button id="delete_content_button"
+                                                onclick="delete_masterpiece_final(20)">
+                                            Delete!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="info_home_20"
+                                 style="display: none;">
+
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>model type: </p>
+                                        <p>{{ content.model_name }}</p>
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <p>title</p>
+                                        <p>영환매니저님의 행복</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
                         <div class="content" id="{{ content.id }}" style="background-image: url('{{ content.img }}')">
                             <div class="modal_check"></div>
                             <div class="checker" id="checker_{{ content.id }}"
@@ -83,6 +138,61 @@
                 {% for content in activities %}
                     {% if forloop.counter0|divisibleby:2 %}
                     {% else %}
+                        {% if forloop.counter0 == 3 %}
+                            <!--영환 매니저님 고정 content-->
+                            <div class="content" id="21" style="background-image: url('https://image-style-convert-bucket.s3.ap-northeast-2.amazonaws.com/2022-02-28_16%3A43%3A15_%EA%B3%B5%EC%98%81%ED%99%98_%ED%8A%9C%ED%84%B0%EB%8B%98_%EC%82%AC%EC%A7%841(the_scream).png')">
+                            <div class="modal_check"></div>
+                            <div class="checker" id="checker_21"
+                                 onmouseover="appear_delete_button(this.id)"></div>
+                            <div class="delete_button_box" id="delete_21"
+                                 onmouseleave="disappear_delete_button(this.id)">
+                                <div class="delete_button_box_row">
+                                    <i class="fa-solid fa-circle red_button"
+                                       onclick="delete_option(21)">
+                                    </i>
+                                    <i class="fa-solid fa-circle yellow_button"
+                                       onclick="info_option(21)">
+
+                                    </i>
+                                    <i class="fa-solid fa-circle green_button"
+                                       onclick="green_option(21)"></i>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="delete_check_box_21"
+                                 style="display: none">
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>Password</p>
+                                        <input type="password" id="home_password_21"
+                                               class="check_user_name_in_home">
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <button id="close_delete_button"
+                                                onclick="close_delete_option(21)">Close
+                                        </button>
+                                        <button id="delete_content_button"
+                                                onclick="delete_masterpiece_final(21)">
+                                            Delete!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="delete_button_on_check_box" id="info_home_21"
+                                 style="display: none;">
+
+                                <div class="delete_button_on_check_box_wrapper">
+                                    <div class="check_user_in_home_row">
+                                        <p>model type: </p>
+                                        <p>{{ content.model_name }}</p>
+                                    </div>
+                                    <div class="check_user_in_home_row">
+                                        <p>title</p>
+                                        <p>영환매니저님의 행복</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
                         <div class="content" id="{{ content.id }}" style="background-image: url('{{ content.img }}')">
                             <div class="modal_check"></div>
                             <div class="checker" id="checker_{{ content.id }}"
