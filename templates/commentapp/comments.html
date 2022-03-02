@@ -63,21 +63,25 @@
                                 {{ comment.comment }}
                             </p>
                         </div>
-                        <div class="comment_profile">
-                            <img src="{{ comment.profile_img }}">
+                        <div>
+                            <div class="comment_profile">
+                                <img src="{{ comment.profile_img }}">
+                            </div>
+                            <p class="comment_username">{{ comment.username }}</p>
                         </div>
+
                     </div>
                 {% endfor %}
             </div>
-        {% if comments.has_next %}
-            <a class="page_button" href="?page={{ comments.next_page_number }}">
-                <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
-            </a>
+            {% if comments.has_next %}
+                <a class="page_button" href="?page={{ comments.next_page_number }}">
+                    <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
+                </a>
             {% else %}
-            <a class="page_button" href="">
-                <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
-            </a>
-        {% endif %}
+                <a class="page_button" href="">
+                    <i class="fa-solid fa-angle-right fa-5x comment_allow"></i>
+                </a>
+            {% endif %}
 
         </div>
         <p class="page">{{ comments }}</p>

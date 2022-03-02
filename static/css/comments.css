@@ -135,6 +135,16 @@
 .comment_profile img{
     width: 100%;
     height: 100%;
+
+}
+
+.comment_username{
+    width: 200px;
+    font-size: 30px;
+    margin-right: 60px;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 .page{

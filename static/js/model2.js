@@ -18,7 +18,8 @@ $(document).ready(function () {
 //     })
 
 function move_to_upload() {
-    $('body,html').animate({scrollTop:1100},1000)
+    let target = document.getElementById('model_2_upload_wrapper')
+    $('body,html').animate({scrollTop:target.offsetHeight/2+target.offsetTop-window.innerHeight/2},1000)
 }
 
 window.addEventListener('scroll', function () {
@@ -36,13 +37,14 @@ window.addEventListener('scroll', function () {
 function open_tip_box(){
     let modal_box = document.getElementById('modal_tip')
     let body = $('body,html')
+    let return_target = document.getElementById('model_2_upload_wrapper')
     if(modal_box.style.display==='block'){
         modal_box.style.display = 'none'
-        body.animate({scrollTop:1100},500)
+        body.animate({scrollTop:return_target.offsetHeight/2+return_target.offsetTop-window.innerHeight/2},500)
     }
     else{
         modal_box.style.display = 'block'
-        body.animate({scrollTop:434},500)
+        body.animate({scrollTop:return_target.offsetHeight/2+return_target.offsetTop-window.innerHeight/2-modal_box.offsetHeight},500)
     }
 
 }
@@ -68,14 +70,13 @@ function upload_style_image(){
 function covert_custom_img(){
     let image = $('#upload_origin_file')[0].files[0]
     let model_image = $('#upload_style_file')[0].files[0]
-
     let body = $('body,html')
-
-    console.log(image)
-    console.log(model_image)
+    let target = document.getElementById('model_2_result_wrapper')
+    let return_target = document.getElementById('model_2_upload_wrapper')
+    body.animate({scrollTop:target.offsetHeight/2+target.offsetTop-window.innerHeight/2},1000)
 
     if(image === undefined  || model_image === undefined ){
-        body.animate({scrollTop:1100},1000)
+        body.animate({scrollTop:return_target.offsetHeight/2+return_target.offsetTop-window.innerHeight/2},1000)
         return alert('Upload your photo!')
     }
 
@@ -103,6 +104,7 @@ function covert_custom_img(){
             console.log(response)
             console.log(response['mixed_img_url'])
             document.getElementById('result_custom_img').src = response['mixed_img_url']
+            document.getElementById('save_tag').href = response['mixed_img_url']
         }
     });
 
