@@ -7,35 +7,50 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Activity',
+            name="Activity",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('model_name', models.CharField(max_length=50)),
-                ('name', models.CharField(max_length=50)),
-                ('img', models.TextField()),
-                ('password', models.CharField(max_length=50)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("model_name", models.CharField(max_length=50)),
+                ("name", models.CharField(max_length=50)),
+                ("img", models.TextField()),
+                ("password", models.CharField(max_length=50)),
             ],
             options={
-                'db_table': 'activity',
+                "db_table": "activity",
             },
         ),
         migrations.CreateModel(
-            name='Info',
+            name="Info",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('model_name', models.CharField(max_length=128)),
-                ('model_img', models.URLField()),
-                ('example_img', models.URLField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("model_name", models.CharField(max_length=128)),
+                ("model_img", models.URLField()),
+                ("example_img", models.URLField()),
             ],
             options={
-                'db_table': 'info',
+                "db_table": "info",
             },
         ),
     ]

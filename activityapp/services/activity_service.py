@@ -5,33 +5,32 @@ def get_activity_page_load(page: int) -> Activity:
     # 6개씩 보여짐
     limit = 6
     offset = limit * (page - 1)
-    activity_list = Activity.objects.order_by("-id")[offset: offset + limit]
+    activity_list = Activity.objects.order_by("-id")[offset : offset + limit]
     return activity_list
 
 
 def create_activity(model_name: str, name: str, pwd: int, img: str) -> str:
-    if model_name == '' or name == '' or pwd == '' or img == '':
-        return 'fail'
+    if model_name == "" or name == "" or pwd == "" or img == "":
+        return "fail"
     else:
         Activity.objects.create(model_name=model_name, name=name, password=pwd, img=img)
-        return 'success'
+        return "success"
 
 
 def delete_activity(pk, password) -> dict:
     target_activity = Activity.objects.get(pk=pk)
     if target_activity.password == str(password):
         target_activity.delete()
-        return {'msg': 'success'}
+        return {"msg": "success"}
     else:
-        return {'msg': 'fail'}
+        return {"msg": "fail"}
 
 
 # 최신순 최대 20개까지 가옴옴
 def load_activity(name: str) -> Activity:
-    model = Activity.objects.order_by('-id').filter(model_name=name)[:20]
+    model = Activity.objects.order_by("-id").filter(model_name=name)[:20]
     return model
 
 
 def create_info(model_name: str, model_img: str, example_img: str) -> None:
     Info.objects.create(model_name, model_img=model_img, example_img=example_img)
-

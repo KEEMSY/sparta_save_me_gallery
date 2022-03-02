@@ -1,7 +1,9 @@
 from django.db import models
+
 from project.models import BaseModel
 
 # Create your models here.
+
 
 class Comment(BaseModel):
     class Meta:

@@ -7,14 +7,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from typing import List
 
+import environ
 import pymysql as pymysql
-
-import os, environ
 
 env = environ.Env(
     # set casting, default value
@@ -24,13 +23,13 @@ env = environ.Env(
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,13 +87,13 @@ pymysql.install_as_MySQLdb()  # 이것을 실행하면 pymysql을 사용하면�
 
 DATABASES = {
     "default": {
-            "ENGINE": "django.db.backends.mysql",
-            "NAME": "team9",
-            "USER": "admin",
-            "PASSWORD": "hPEc5wD8chovXKWjcwck",
-            "HOST": "team9.c79lznrngi8y.ap-northeast-2.rds.amazonaws.com",
-            "PORT": "3306",
-       }
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "team9",
+        "USER": "admin",
+        "PASSWORD": "hPEc5wD8chovXKWjcwck",
+        "HOST": "team9.c79lznrngi8y.ap-northeast-2.rds.amazonaws.com",
+        "PORT": "3306",
+    }
 }
 
 # Password validation
@@ -129,9 +128,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 # Default primary key field type
