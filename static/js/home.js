@@ -88,6 +88,7 @@ function delete_masterpiece_final(id){
         },
         success: function(response){
             console.log(response['msg'])
+            alert(response['msg'])
         }
     })
 

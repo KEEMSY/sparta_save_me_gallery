@@ -166,32 +166,60 @@
     z-index: 2;
 }
 
+@keyframes modal_appear {
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes modal_disappear {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 .modal_box{
     position: relative;
     top: 400px;
     margin: 0 auto;
     width: 1100px;
     height: 500px;
-    background-color: #C4C4C4;
+    background-color: #785252;
+    color: white;
 }
 
 .modal_close{
-    left: 1060px;
-    width: 40px;
+    left: 10px;
+    width: 70px;
     height: 40px;
-    background-color: #ab0808;
-    opacity: 0.6;
     position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-}
-.modal_close:hover{
-    opacity: 1;
 
 }
+
+.modal_close i:nth-child(1){
+    color: #ED6A5E;
+    cursor: pointer;
+}
+
+.modal_close i:nth-child(2){
+    color: #F4BF4F;
+}
+
+.modal_close i:nth-child(3){
+    color: #969696;
+}
+
+
 
 
 .user_info_row{
@@ -204,6 +232,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 20px;
+
 }
 
 
@@ -256,8 +285,10 @@
     left: 150px;
 }
 .modal_delete_button{
+    margin-top: 30px;
     width: 900px;
     top: 60px;
     left: 90px;
+    height: 50px;
 }
 

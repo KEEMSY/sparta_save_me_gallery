@@ -27,19 +27,31 @@ function comment_check(){
 
 function open_write_box(){
     document.getElementById('modal_container').style.display = 'block'
+    document.getElementById('modal_container').style.animation = 'modal_appear 0.5s ease-out forwards'
 }
 
 function close_write_box(){
-    document.getElementById('modal_container').style.display = 'none'
     document.getElementById('comment_name').value = ''
     document.getElementById('comment_password').value = ''
     document.getElementById('comment_content').value = ''
+    document.getElementById('modal_container').style.animation = 'modal_disappear 1s ease-out forwards'
+    setTimeout(function (){
+         document.getElementById('modal_container').style.display = 'none'
+    },1000)
+
+
 }
 
 function save_comment(){
     let username = document.getElementById('comment_name').value
     let pwd = document.getElementById('comment_password').value
     let comment = document.getElementById('comment_content').value
+
+    if(username === '' || pwd==='' || comment === ''){
+        return alert('Name 과 Password는 필수 입력사항입니다~')
+
+    }
+
     comment = comment.replace(/(?:\r\n|\r|\n)/g, '<br/>');
     $.ajax({
         type: 'POST',
@@ -50,7 +62,7 @@ function save_comment(){
             'comment': comment,
         },
         success: function(response){
-            console.log('msg')
+            console.log(response['msg'])
         }
     })
 
@@ -61,14 +73,21 @@ function open_delete_comment_box(id){
      $('body,html').animate({scrollTop:0},1000)
     window.scrollTo(0,0)
     document.getElementById('modal_delete_container').style.display='block'
+    document.getElementById('modal_delete_container').style.animation = 'modal_appear 0.5s ease-out forwards'
     document.getElementById('delete_target').innerText = id.split('_')[1]
+    let name = document.getElementById('comment_user_name_' + id.split('_')[1]).innerText
+    document.getElementById('check_comment_name').value = name
 }
 
 function close_delete_comment_box(){
-    document.getElementById('modal_delete_container').style.display='none'
+
     document.getElementById('check_comment_name').value=''
     document.getElementById('check_comment_password').value=''
     document.getElementById('delete_target').innerText=''
+    document.getElementById('modal_delete_container').style.animation = 'modal_disappear 0.5s ease-out forwards'
+    setTimeout(function (){
+         document.getElementById('modal_delete_container').style.display='none'
+    },1000)
 }
 
 function delete_comment(){
@@ -76,7 +95,9 @@ function delete_comment(){
     let password = document.getElementById('check_comment_password').value
     let target_id = document.getElementById('delete_target').innerText
     let comment = document.getElementById('comment_content_' + target_id).innerText
+
     comment = comment.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+
     $.ajax({
         type: 'POST',
         url: '/comments/delete/',

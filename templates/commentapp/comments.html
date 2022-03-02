@@ -9,8 +9,12 @@
 {% block content %}
     <div class="modal_container" id="modal_container" style="display: none">
         <div class="modal_box">
-            <div class="modal_close" onclick="close_write_box()">
-                <i class="fa-solid fa-x "></i>
+            <div class="modal_close" >
+                <i class="fa-solid fa-circle red_button" onclick="close_write_box()"></i>
+                <i class="fa-solid fa-circle yellow_button"
+                   ></i>
+                <i class="fa-solid fa-circle green_button"
+                   ></i>
             </div>
             <div class="user_info_row">
                 <p>Name</p>
@@ -25,13 +29,15 @@
 
     <div class="modal_container" id="modal_delete_container" style="display: none;">
         <div class="modal_box delete_box">
-            <div class="modal_close" onclick="close_delete_comment_box()">
-                <i class="fa-solid fa-x "></i>
+            <div class="modal_close" >
+                <i class="fa-solid fa-circle red_button" onclick="close_delete_comment_box()"></i>
+                <i class="fa-solid fa-circle yellow_button"></i>
+                <i class="fa-solid fa-circle green_button"></i>
             </div>
             <div id="delete_target" style="display: none"></div>
             <div class="user_info_row modal_delete_row">
                 <p>Name</p>
-                <input type="text" id="check_comment_name">
+                <input type="text" id="check_comment_name" value="">
                 <p>PW</p>
                 <input type="password" id="check_comment_password">
             </div>
@@ -58,7 +64,7 @@
                     </div>
                     <div class="comment">
                         <div class="comment_info">
-                            <p class="comment_title"><u>Please leave your guestbook!</u></p>
+                            <p class="comment_title"><u>Please leave your guestbook! </u></p>
                             <p class="comment_content" id="comment_content_{{ comment.id }}">
                                 {{ comment.comment }}
                             </p>
@@ -67,7 +73,7 @@
                             <div class="comment_profile">
                                 <img src="{{ comment.profile_img }}">
                             </div>
-                            <p class="comment_username">{{ comment.username }}</p>
+                            <p class="comment_username" id="comment_user_name_{{ comment.id }}">{{ comment.username }}</p>
                         </div>
 
                     </div>

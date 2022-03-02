@@ -73,12 +73,17 @@ function covert_custom_img(){
     let body = $('body,html')
     let target = document.getElementById('model_2_result_wrapper')
     let return_target = document.getElementById('model_2_upload_wrapper')
-    body.animate({scrollTop:target.offsetHeight/2+target.offsetTop-window.innerHeight/2},1000)
+    let spinner = document.getElementById('model_2_loading')
 
     if(image === undefined  || model_image === undefined ){
-        body.animate({scrollTop:return_target.offsetHeight/2+return_target.offsetTop-window.innerHeight/2},1000)
-        return alert('Upload your photo!')
+        alert('Upload your photo!')
+        return move_to_upload()
     }
+
+    spinner.style.display='block'
+    body.animate({scrollTop:target.offsetHeight/2+target.offsetTop-window.innerHeight/2},1000)
+
+
 
 
     let image_name = image['name'].split('.')[0]
@@ -102,7 +107,9 @@ function covert_custom_img(){
         processData: false,
         success: function (response) {
             console.log(response)
+            spinner.style.display = 'none'
             console.log(response['mixed_img_url'])
+            document.getElementById('result_custom_img').style.display = 'block'
             document.getElementById('result_custom_img').src = response['mixed_img_url']
             document.getElementById('save_tag').href = response['mixed_img_url']
         }
