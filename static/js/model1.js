@@ -133,7 +133,7 @@ function covert_img() {
     console.log(form_data)
     $.ajax({
         type: "POST",
-        url: "http://localhost:5000/api/convert/",
+        url: "http://15.165.45.152: 5000/api/convert/",
         data: form_data,
         cache: false,
         contentType: false,
