@@ -58,6 +58,7 @@ function save_comment(){
 }
 
 function open_delete_comment_box(id){
+    window.scrollTo(0,0)
     document.getElementById('modal_delete_container').style.display='block'
     document.getElementById('delete_target').innerText = id.split('_')[1]
 }

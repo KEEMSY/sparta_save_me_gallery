@@ -30,12 +30,7 @@ function disappear(id) {
 
 
 function move_to_upload() {
-    window.scrollTo(0, 1300)
-
-    window.addEventListener('scroll', function () {
-        let value = window.scrollY
-        console.log(value)
-    })
+    $('body,html').animate({scrollTop:1300},1000)
 }
 
 window.addEventListener('scroll', function () {
@@ -56,38 +51,10 @@ function upload_image() {
     const file_url = URL.createObjectURL(img);
     preview_img.style.backgroundImage = `url(${file_url})`
     preview_img.style.backgroundColor = 'white'
-    setTimeout(function () {
-        // scroll_to(2464)
-        window.scrollTo(0, 2464)
-    }, 1000);
 
-    // console.log(img)
-    // console.log(file_url)
-
-    // let reader = new FileReader();
-    // reader.readAsDataURL(img);
-    // preview_img.style.backgroundImage = `url('${reader.result}')`;
-    // console.log(reader);
+    $('body,html').animate({scrollTop:2500},1000)
 
 
-}
-
-function scroll_to(target_scroll) {
-    let current_scroll = window.scrollY
-
-    let gap = target_scroll - current_scroll
-
-
-    while (gap >= 0) {
-        gap -= 10
-        current_scroll += 10
-
-        setTimeout(function () {
-            window.scrollTo(0, current_scroll)
-
-        }, 100);
-
-    }
 }
 
 
@@ -133,7 +100,7 @@ function covert_img() {
     console.log(form_data)
     $.ajax({
         type: "POST",
-        url: "http://localhost:5000/api/convert/",
+        url: "http://15.165.45.152:5000/api/convert/",
         data: form_data,
         cache: false,
         contentType: false,
@@ -148,7 +115,7 @@ function covert_img() {
 
     let painting_div = document.getElementById('painting')
     painting_div.innerText = model_type
-    window.scrollTo(0, 3764)
+    $('body,html').animate({scrollTop:2300},1000)
 }
 
 function open_save_box() {
@@ -156,7 +123,6 @@ function open_save_box() {
     let radio_check = document.getElementsByClassName('radio_fill')
     radio_check[0].style.display = 'block'
     radio_check[1].style.display = 'none'
-    console.log(radio_box)
     radio_box.style.display = 'block'
 }
 

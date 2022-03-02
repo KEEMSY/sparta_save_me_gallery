@@ -24,8 +24,8 @@ body::-webkit-scrollbar-thumb{
     width: 80px;
     height: 80px;
     position: fixed;
-    top : 1320px;
-    left : 2020px;
+    top : 1050px;
+    left : 1620px;
     background-color: transparent;
     z-index: 10;
     display: flex;
