@@ -54,10 +54,7 @@ function upload_image() {
     const file_url = URL.createObjectURL(img);
     preview_img.style.backgroundImage = `url(${file_url})`
     preview_img.style.backgroundColor = 'white'
-
     $('body,html').animate({scrollTop:2500},1000)
-
-
 }
 
 
@@ -109,13 +106,14 @@ function covert_img() {
     }
     let image_name = image['name'].split('.')[0]
     let form_data = new FormData()
-
+    let spinner = document.getElementById('loading')
+    spinner.style.display = 'block'
 
     form_data.append("image_name", image_name)
     form_data.append("model_type", model_type)
     form_data.append("image", image)
 
-    console.log(form_data)
+
     $.ajax({
         type: "POST",
         url: "http://15.165.45.152:5000/api/convert/",
@@ -126,7 +124,11 @@ function covert_img() {
         success: function (response) {
             console.log('response data : ', response)
             console.log(response['stylized_img_url'])
+            spinner.style.display = 'none';
+            document.getElementById('result_img').style.display = 'block'
             document.getElementById('result_img').src = response['stylized_img_url']
+            document.getElementById('save_tag').href= response['stylized_img_url']
+
         }
     });
 
