@@ -65,8 +65,7 @@ function save_comment(){
             console.log(response['msg'])
         }
     })
-
-    window.location.href='/comments/';
+    window.location.reload(true)
 }
 
 function open_delete_comment_box(id){
@@ -111,6 +110,6 @@ function delete_comment(){
             alert(response['msg'])
         }
     })
-    location.reload();
+    window.location.reload(true);
 }
 
