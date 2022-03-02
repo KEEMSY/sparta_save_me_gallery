@@ -10,6 +10,8 @@ $(document).ready(function () {
         }
     });
     initial_underline()
+    document.getElementById('style_0').click()
+
 });
 
 function appear(id) {
@@ -61,8 +63,8 @@ function upload_image() {
 
 var swiper = new Swiper(".select_box", {
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        // nextEl: ".swiper-button-next",
+        // prevEl: ".swiper-button-prev",
     },
 });
 
@@ -71,6 +73,18 @@ var swiper = new Swiper(".select_box", {
 
 function test(index) {
     swiper.slideTo(index)
+}
+
+function next_category(){
+    let current_index = swiper.realIndex+1
+    let target = document.getElementById('style_'+ current_index )
+    target.click();
+}
+
+function prev_category(){
+    let current_index = swiper.realIndex -1
+    let target = document.getElementById('style_'+ current_index)
+    target.click();
 }
 
 let underline_2 = document.getElementById('select_style')
@@ -90,6 +104,9 @@ function covert_img() {
 
     let model_type = document.getElementById('style_' + swiper.realIndex).innerText
     let image = $('#upload_file')[0].files[0]
+    if (image===undefined){
+        return move_to_upload()
+    }
     let image_name = image['name'].split('.')[0]
     let form_data = new FormData()
 
