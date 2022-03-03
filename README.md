@@ -63,40 +63,45 @@
 <br>
 
 ## ❗주요기능
-### 장고
-- **CRUD기능** 
-  - commentapp
-    - 기능
-    
-  <br>
+<br>
+
+- 웹사이트의 이용은 누구나 할 수 있다.(비회원제)
+  - Activty
+    - 9개의 화풍 중 선택하거나, 직접 화풍이 될 이미지를 선택하여 이미지를 생성할 수 있다.
+    - 생성한 이미지를 로컬에 저장 할 수 있고, 웹사이트에 결과물을 게시할 수 있다.
+    - 저장된 결과물은 본인이 작성한 비밀번호를 통해서만 삭제 할 수 있다.
+    - 생성된 이미지는 해당하는 화풍에따라 최신순으로 업데이트 된다.
   
-  - activityapp
-    - TDD기반 기능 개발
+    <br>
     
-
-
-- **RESTAPI 설계**
+  - Comment
+    - 댓글을 작성하고, 삭제는 작성한 비밀번호를 통해서만 삭제 할 수 있다.
+    - 페이지네이션을 통해 최신순 댓글을 볼 수 있다.
 
 <br>
 
-### AI
-- 기능
-  - 이미지 화풍변환 기능
-  - 사용자로부터 입력받은 화풍용 이미지와 Mix 기능
+- AI
+  - 이미지의 화풍 변환이 가능하다.
+  - 사용자로부터 입력받은 화풍용 이미지와 Mix 가능하다.
+
+
+<br>
+
 
 
 ## 🔍 기획 
 <img src="https://blog.kakaocdn.net/dn/dqKNrm/btruUoKW7Wj/bpCkIaDevkDHNAlSBCHWd0/img.png" style="width: 65rem; height: 55rem; display: block; margin: 0 auto;">
 
 ## 📖 API
+👉 자세한 사항은 https://www.notion.so/API-fbf25514ace94bd7be1005588f38c64f
+
 <img src="https://blog.kakaocdn.net/dn/b9vL1M/btruRLNnAD0/DqkvK4Smjrr43J5XuRT9g1/img.png" style="width: 55rem; height: 65rem;display: block; margin: 0 auto;">
 
-- https://www.notion.so/API-fbf25514ace94bd7be1005588f38c64f
 
 ## 💾 DB
-<img src="https://blog.kakaocdn.net/dn/bvSYaF/btruXT4gwKn/57xEhraDuQKXCMXPNBkSEk/img.png" style="width: 55rem; height: 59rem; display: block; margin: 0 auto;">
+👉 자세한 사항은 https://www.notion.so/DB-5270084d4247404290813dcee4727401
 
-- https://www.notion.so/DB-5270084d4247404290813dcee4727401
+<img src="https://blog.kakaocdn.net/dn/bvSYaF/btruXT4gwKn/57xEhraDuQKXCMXPNBkSEk/img.png" style="width: 55rem; height: 59rem; display: block; margin: 0 auto;">
 
 <br>
 
