@@ -23,6 +23,16 @@
 - AWS: RDS, S3
 <br>
 
+# 🗞 프로젝세팅
+- 패키지: requirements.txt
+
+
+- 필요한 파일
+  - local setting : db설정
+  - .env : SECRETE_KEY 설정
+    - 참고 : https://django-environ.readthedocs.io/en/latest/getting-started.html 
+
+
 ## 🗓 프로젝트기간
 <p style="font-size: 1.1rem">
 2022년 2월22일 ~ 2022년 3월3일
