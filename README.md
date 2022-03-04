@@ -21,9 +21,10 @@
 - Javascript
 - mySQL
 - AWS: RDS, S3
+
 <br>
 
-# 🗞 프로젝세팅
+# 🗞 프로젝트세팅
 - 패키지: requirements.txt
 
 
@@ -31,6 +32,8 @@
   - local setting : db설정
   - .env : SECRETE_KEY 설정
     - 참고 : https://django-environ.readthedocs.io/en/latest/getting-started.html 
+
+<br>
 
 
 ## 🗓 프로젝트기간
