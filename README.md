@@ -15,7 +15,7 @@
 
 
 ## 📁 사용한 기술
-<img src="https://sykeem.tistory.com/entry/4%EB%B2%88%EC%A7%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B89%ED%95%B4%EC%A4%98%EA%B0%A4%EB%9F%AC%EB%A6%AC?category=1034089">
+<img src="https://user-images.githubusercontent.com/96563125/174002314-328a5259-c3af-4138-b231-2f70bfd4217b.png">
 
 - Django, Django-ninja
 - Tensorflow
