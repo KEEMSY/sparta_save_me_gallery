@@ -1,5 +1,7 @@
 # 🎨 유화제작 서비스(9해줘갤러리)
 
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbTXCrr%2FbtrvFCg0IsQ%2FeqsK5kYkHKyNIW8LPswbRK%2Fimg.png">
+
 <br>
 
 ## 소개
@@ -13,7 +15,7 @@
 
 
 ## 📁 사용한 기술
-<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0e2fe3e0-cc58-4a1a-b340-858718d8ce47/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220302%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220302T100511Z&X-Amz-Expires=86400&X-Amz-Signature=b819acb29217ec2ba71db38a1bde47af4fb697db0c74e0c6c9d8ea63a68b20be&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject" style="width: 66rem; height: 40rem; display: block; margin: 0 auto;">
+<img src="https://sykeem.tistory.com/entry/4%EB%B2%88%EC%A7%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B89%ED%95%B4%EC%A4%98%EA%B0%A4%EB%9F%AC%EB%A6%AC?category=1034089">
 
 - Django, Django-ninja
 - Tensorflow
